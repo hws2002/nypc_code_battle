@@ -1,3 +1,5 @@
+//mcts.cpp
+#include "mctsnode.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -9,28 +11,31 @@ using namespace std;
 // 게임 상태를 관리하는 클래스
 class Game
 {
-private:
+public:
     vector<vector<int>> board; // 게임 보드 (2차원 벡터)
     bool first;                // 선공 여부
     bool passed;               // 마지막 턴에 패스했는지 여부
-
-public:
+	int myscore;
+	int oppscore;
+	
     Game() {}
 
     Game(const vector<vector<int>> &board, bool first)
-        : board(board), first(first), passed(false) {}
+        : board(board), first(first), passed(false), myscore(0), oppscore(0) {}
 
     // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
     bool isValid(int r1, int c1, int r2, int c2)
     {
         int sums = 0;
         bool r1fit = false, c1fit = false, r2fit = false, c2fit = false;
-
+		int score = 0;
         for (int r = r1; r <= r2; r++)
             for (int c = c1; c <= c2; c++)
                 if (board[r][c] != 0)
                 {
                     sums += board[r][c];
+					score++;
+					if(sums > 10) return false;
                     if (r == r1)
                         r1fit = true;
                     if (r == r2)
@@ -40,7 +45,9 @@ public:
                     if (c == c2)
                         c2fit = true;
                 }
-        return (sums == 10) && r1fit && r2fit && c1fit && c2fit;
+		bool ret = (sums == 10) && r1fit && r2fit && c1fit && c2fit;
+		if (ret) myscore+= score;
+        return ret;
     }
 
     // ================================================================
@@ -50,16 +57,11 @@ public:
     // ================================================================
     vector<int> calculateMove(int myTime, int oppTime)
     {
-        // 가로로 인접한 두 칸을 선택했을 때 유효하면 선택하는 전략
-        for (int r1 = 0; r1 < board.size(); r1++)
-            for (int c1 = 0; c1 < board[r1].size() - 1; c1++)
-            {
-                int r2 = r1;
-                int c2 = c1 + 1;
-                if (isValid(r1, c1, r2, c2))
-                    return {r1, c1, r2, c2};
-            }
-        return {-1, -1, -1, -1}; // 유효한 사각형이 없으면 패스
+		
+        //몬테카를로 서치
+		// return {-1,-1,-1,-1};
+		Move best = runMCTS(board, 500, true);
+		return {best.r1, best.c1, best.r2, best.c2}; // 유효한 사각형이 없으면 패스
     }
     // =================== [필수 구현 끝] =============================
 
@@ -78,8 +80,10 @@ public:
             return;
         }
         for (int r = r1; r <= r2; r++)
-            for (int c = c1; c <= c2; c++)
+            for (int c = c1; c <= c2; c++){
+				if( board[r][c] > 0) oppscore++;
                 board[r][c] = 0;
+			}
         passed = false;
     }
 };
