@@ -1,6 +1,8 @@
 // game.cpp
 #include "game.h"
 #include "mcts.h"
+#include <fstream>
+#include <chrono>
 
 #define DEBUG
 
@@ -14,23 +16,33 @@ void Move::printMove() const { //디버그용 함수
 
 Game::Game(const Board &board, bool first)
 	: board(board), first(first), passed(false), myscore(0), oppscore(0) {
+// auto start = std::chrono::high_resolution_clock::now();
+		// rootNode = make_shared<MCTSNode>(board, myTurn, Move{-1,-1,-1,-1});
 		allValidMoves = getAllValidMoves(board);
+		
+// auto end = std::chrono::high_resolution_clock::now();
+// auto duration = std::chrono::duration_cast<std::chrono::microseconds >(end-start);
+
+// std::cout << "실행 시간: " << duration.count() << "microseconds" << std::endl;
 		#ifdef DEBUG
-		for(const auto & vm : allValidMoves){
-			vm.printMove();
-		}
+			std::ofstream fout("initial_valid.txt");
+			for (const auto &vm : allValidMoves) {
+				fout << "move : " << vm.r1 << " " << vm.c1 << " " << vm.r2 << " " << vm.c2
+					 << ". size : " << (vm.r2 - vm.r1 + 1) * (vm.c2 - vm.c1 + 1) << std::endl;
+			}
+			fout.close();
+		
 		#endif
 };
 
 vector<int> Game::calculateMove(int myTime, int oppTime){
-	//몬테카를로 서치
-	cout<<"mytime :"<<myTime<<endl;
-	Move best = runMCTS(board, 500, true);
+	Move best = runMCTS(board, myTime, true);
 	return {best.r1, best.c1, best.r2, best.c2}; // 유효한 사각형이 없으면 패스
 };
 
 // utils
 
+// Prefixsum
 // prefixSum[r][c] 는 (0,0)부터 (r-1,c-1)까지 영역 합
 vector<vector<int>> computePrefixSum(const vector<vector<int>>& board) {
     int R = board.size();
@@ -47,6 +59,22 @@ vector<vector<int>> computePrefixSum(const vector<vector<int>>& board) {
     }
     return prefixSum;
 }
+
+
+// 펜윅트리 기반 valid moves 찾기
+Fenwick2D computeFenwickSum(const vector<vector<int>>& board) {
+    int R = board.size();
+    int C = board[0].size();
+	Fenwick2D fenwickSum(R,C);
+
+    for (int r = 0; r < R; ++r) {
+        for (int c = 0; c < C; ++c) {
+			fenwickSum.update(r,c, board[r][c]);
+        }
+    }
+    return fenwickSum;
+}
+
 
 int getRectSum(const vector<vector<int>>& prefixSum, int r1, int c1, int r2, int c2) {
     // r1,c1,r2,c2는 0-based 인덱스
@@ -71,19 +99,18 @@ bool checkBorder(const vector<vector<int>>& board, int r1, int c1, int r2, int c
     return r1fit && r2fit && c1fit && c2fit;
 }
 
-// game 인스턴스가 초기화될시에, 모든 valid moves를 저장한다.
-// mctsnode를 생성할 때마다 validmoves를 탐색하면 비용이 너무 크기 때문
+// Fenwick2D 기반
 vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
 	vector<Move> moves;
 	int R = board.size();
 	int C = board[0].size();
-	const auto & prefixSum = computePrefixSum(board);
-    
+	// const auto & prefixSum = computePrefixSum(board);
+    const auto & fenwickSum = computeFenwickSum(board);
 	for (int r1 = 0; r1 < R; ++r1) {
         for (int c1 = 0; c1 < C; ++c1) {
             for (int r2 = r1; r2 < R; ++r2) {
                 for (int c2 = c1; c2 < C; ++c2) {
-                    int sum = getRectSum(prefixSum, r1, c1, r2, c2);
+                    int sum = fenwickSum.query(r1, c1, r2, c2);
                     if (sum == 10 && checkBorder(board, r1, c1, r2, c2)) {
                         moves.push_back({r1, c1, r2, c2});
                     }
@@ -91,8 +118,31 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
             }
         }
     }
+
 	return moves;
 }
+
+// // prefixsum기반
+// vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
+// 	vector<Move> moves;
+// 	int R = board.size();
+// 	int C = board[0].size();
+// 	const auto & prefixSum = computePrefixSum(board);
+    
+// 	for (int r1 = 0; r1 < R; ++r1) {
+//         for (int c1 = 0; c1 < C; ++c1) {
+//             for (int r2 = r1; r2 < R; ++r2) {
+//                 for (int c2 = c1; c2 < C; ++c2) {
+//                     int sum = getRectSum(prefixSum, r1, c1, r2, c2);
+//                     if (sum == 10 && checkBorder(board, r1, c1, r2, c2)) {
+//                         moves.push_back({r1, c1, r2, c2});
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// 	return moves;
+// }
 
 // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
 bool isValid(Board board, int r1, int c1, int r2, int c2){
@@ -115,4 +165,35 @@ bool isValid(Board board, int r1, int c1, int r2, int c2){
 					c2fit = true;
 			}
 	return (sums == 10) && r1fit && r2fit && c1fit && c2fit;
+}
+
+
+// 2D 펜윅트리 구현
+Fenwick2D::Fenwick2D(int rows, int cols) : n(rows), m(cols) {
+	tree.assign(n + 1, vector<int>(m + 1, 0));
+};
+
+void Fenwick2D::update(int x, int y, int delta) {
+	for (int i = x + 1; i <= n; i += i & -i) {
+		for (int j = y + 1; j <= m; j += j & -j) {
+			tree[i][j] += delta;
+		}
+	}
+}
+
+int Fenwick2D::query(int x, int y) const {
+	int sum = 0;
+	for (int i = x + 1; i > 0; i -= i & -i) {
+		for (int j = y + 1; j > 0; j -= j & -j) {
+			sum += tree[i][j];
+		}
+	}
+	return sum;
+}
+
+int Fenwick2D::query(int x1, int y1, int x2, int y2) const {
+	return query(x2, y2)
+		 - query(x1 - 1, y2)
+		 - query(x2, y1 - 1)
+		 + query(x1 - 1, y1 - 1);
 }

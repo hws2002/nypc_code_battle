@@ -28,7 +28,9 @@ public:
 	vector<Move> validmoves;
     NodePtr parent;
 	
-    MCTSNode(const vector<vector<int>>& board, bool myTurn, Move move, MCTSNode* parent = nullptr);
+    MCTSNode(const vector<vector<int>>& board, bool myTurn,
+			 Move move, const vector<Move> validMove,
+			 MCTSNode* parent = nullptr);
 
     bool isFullyExpanded() const;
 
@@ -37,4 +39,6 @@ public:
     void expand();
 
     NodePtr bestChild() const;
+	
+	void updatevalidMoves();
 };

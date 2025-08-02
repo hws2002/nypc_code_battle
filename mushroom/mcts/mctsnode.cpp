@@ -5,8 +5,8 @@
 using namespace std;
 
 // MCTS Node
-MCTSNode::MCTSNode(const vector<vector<int>>& board, bool myTurn, Move move, MCTSNode* parent)
-	: board(board), myTurn(myTurn), move(move), parent(parent) {};
+MCTSNode::MCTSNode(const vector<vector<int>>& board, bool myTurn, Move move, MCTSNode* parent, const vector<Move> validMoves)
+	: board(board), myTurn(myTurn), move(move), parent(parent), validmoves(validMoves) {};
 
 bool MCTSNode::isFullyExpanded() const {
 	return !children.empty();
@@ -20,19 +20,24 @@ double MCTSNode::uctValue() const {
 }
 
 void MCTSNode::expand() {
-	vector<Move> validMoves = getAllValidMoves(board);
-	if (validMoves.empty()) validMoves.push_back({-1, -1, -1, -1});
+	if (validmoves.empty()) validmoves.push_back({-1, -1, -1, -1});
 
-	for (const Move& m : validMoves) {
+	for (const Move& m : validmoves) {
 		auto newBoard = board;
 		if (!m.isPass()) {
 			for (int r = m.r1; r <= m.r2; ++r)
 				for (int c = m.c1; c <= m.c2; ++c)
 					newBoard[r][c] = 0;
 		}
-		children.push_back(make_shared<MCTSNode>(newBoard, !myTurn, m, this));
+		// child의 validmoves는 생성될때 바로 수정되지 않고, selected 됐을때 수정한다.
+		children.push_back(make_shared<MCTSNode>(newBoard, !myTurn, m, validmoves, this));
 	}
 }
+
+//TODO:
+void MCTSNode::updateValidMoves(){
+	
+};
 
 NodePtr MCTSNode::bestChild() const {
 	return *max_element(children.begin(), children.end(), [](const NodePtr& a, const NodePtr& b) {
