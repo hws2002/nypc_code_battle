@@ -1,169 +1,84 @@
-//mcts.cpp
+// mcts.cpp
+#include "mcts.h"
 #include "mctsnode.h"
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <algorithm>
+#include "game.h"
 
-using namespace std;
 
-// 게임 상태를 관리하는 클래스
-class Game
-{
-public:
-    vector<vector<int>> board; // 게임 보드 (2차원 벡터)
-    bool first;                // 선공 여부
-    bool passed;               // 마지막 턴에 패스했는지 여부
-	int myscore;
-	int oppscore;
-	
-    Game() {}
+// MCTS 수행 함수
+Move runMCTS(const vector<vector<int>>& board, int iterations, bool myTurn) {
+    srand(time(NULL));
+    auto root = make_shared<MCTSNode>(board, myTurn, Move{-1, -1, -1, -1});
 
-    Game(const vector<vector<int>> &board, bool first)
-        : board(board), first(first), passed(false), myscore(0), oppscore(0) {}
+    for (int i = 0; i < iterations; ++i) {
+        MCTSNode* node = root.get();
 
-    // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
-    bool isValid(int r1, int c1, int r2, int c2)
-    {
-        int sums = 0;
-        bool r1fit = false, c1fit = false, r2fit = false, c2fit = false;
-		int score = 0;
-        for (int r = r1; r <= r2; r++)
-            for (int c = c1; c <= c2; c++)
-                if (board[r][c] != 0)
-                {
-                    sums += board[r][c];
-					score++;
-					if(sums > 10) return false;
-                    if (r == r1)
-                        r1fit = true;
-                    if (r == r2)
-                        r2fit = true;
-                    if (c == c1)
-                        c1fit = true;
-                    if (c == c2)
-                        c2fit = true;
-                }
-		bool ret = (sums == 10) && r1fit && r2fit && c1fit && c2fit;
-		if (ret) myscore+= score;
-        return ret;
-    }
-
-    // ================================================================
-    // ===================== [필수 구현] ===============================
-    // 합이 10인 유효한 사각형을 찾아 {r1, c1, r2, c2} 벡터로 반환
-    // 없으면 {-1, -1, -1, -1}을 반환하여 패스를 의미함
-    // ================================================================
-    vector<int> calculateMove(int myTime, int oppTime)
-    {
-		
-        //몬테카를로 서치
-		// return {-1,-1,-1,-1};
-		Move best = runMCTS(board, 500, true);
-		return {best.r1, best.c1, best.r2, best.c2}; // 유효한 사각형이 없으면 패스
-    }
-    // =================== [필수 구현 끝] =============================
-
-    // 상대방의 수를 받아 보드에 반영
-    void updateOpponentAction(const vector<int> &action, int time)
-    {
-        updateMove(action[0], action[1], action[2], action[3], false);
-    }
-
-    // 주어진 수를 보드에 반영 (칸을 0으로 지움)
-    void updateMove(int r1, int c1, int r2, int c2, bool isMyMove)
-    {
-        if (r1 == -1 && c1 == -1 && r2 == -1 && c2 == -1)
-        {
-            passed = true;
-            return;
+        // Selection
+        while (node->isFullyExpanded() && !node->children.empty()) {
+            node = max_element(
+                node->children.begin(), node->children.end(),
+                [](const NodePtr& a, const NodePtr& b) {
+                    return a->uctValue() < b->uctValue();
+                })->get();
         }
-        for (int r = r1; r <= r2; r++)
-            for (int c = c1; c <= c2; c++){
-				if( board[r][c] > 0) oppscore++;
-                board[r][c] = 0;
-			}
-        passed = false;
+
+        // Expansion
+        if (!node->isFullyExpanded()) node->expand();
+
+        // Simulation
+        NodePtr selected = node->children.empty() ? make_shared<MCTSNode>(node->board, !node->myTurn, Move{-1, -1, -1, -1}, node) : node->children[0];
+        bool result = simulate(selected->board, selected->myTurn,"random");
+
+        // Backpropagation
+        while (selected) {
+            selected->visits++;
+            if (selected->myTurn == myTurn && result)
+                selected->wins += 1.0;
+            else if (selected->myTurn != myTurn && !result)
+                selected->wins += 1.0;
+            selected = selected->parent;
+        }
     }
+
+    return root->bestChild()->move;
 };
 
-// 표준 입력을 통해 명령어를 처리하는 메인 함수
-int main()
-{
-    Game game;
-    bool first = false;
 
-    while (true)
-    {
-        string line;
-        getline(cin, line);
 
-        istringstream iss(line);
-        string command;
-        if (!(iss >> command))
-            continue;
+bool simulate(const vector<vector<int>>& initBoard, bool myStartTurn, string method) {
+	if(method == "random"){
+		vector<vector<int>> board = initBoard;
+		bool turn = myStartTurn;
+		int passCount = 0;
+		int myScore = 0, oppScore = 0;
 
-        if (command == "READY")
-        {
-            // 선공 여부 확인
-            string turn;
-            iss >> turn;
-            first = (turn == "FIRST");
-            cout << "OK" << endl;
-            continue;
-        }
+		while (passCount < 2) {
+			vector<Move> moves = getAllValidMoves(board);
+			Move m;
+			if (moves.empty()) {
+				m = {-1, -1, -1, -1};
+			} else {
+				m = moves[rand() % moves.size()];
+			}
 
-        if (command == "INIT")
-        {
-            // 보드 초기화
-            vector<vector<int>> board;
-            string row;
-            while (iss >> row)
-            {
-                vector<int> boardRow;
-                for (char c : row)
-                {
-                    boardRow.push_back(c - '0'); // 문자 → 숫자 변환
-                }
-                board.push_back(boardRow);
-            }
-            game = Game(board, first);
-            continue;
-        }
+			if (m.isPass()) {
+				passCount++;
+			} else {
+				for (int r = m.r1; r <= m.r2; ++r)
+					for (int c = m.c1; c <= m.c2; ++c) {
+						if (board[r][c] > 0) {
+							if (turn) myScore++;
+							else oppScore++;
+						}
+						board[r][c] = 0;
+					}
+				passCount = 0;
+			}
+			turn = !turn;
+		}
+		return myScore > oppScore; // true: 승, false: 패
+	} else { //TODO
+		return false;
+	}
+};
 
-        if (command == "TIME")
-        {
-            // 내 차례: 수 계산 및 출력
-            int myTime, oppTime;
-            iss >> myTime >> oppTime;
 
-            vector<int> ret = game.calculateMove(myTime, oppTime);
-            game.updateMove(ret[0], ret[1], ret[2], ret[3], true);
-
-            cout << ret[0] << " " << ret[1] << " " << ret[2] << " " << ret[3] << endl; // 내 행동 출력
-            continue;
-        }
-
-        if (command == "OPP")
-        {
-            // 상대 행동 반영
-            int r1, c1, r2, c2, time;
-            iss >> r1 >> c1 >> r2 >> c2 >> time;
-            game.updateOpponentAction({r1, c1, r2, c2}, time);
-            continue;
-        }
-
-        if (command == "FINISH")
-        {
-            // 게임 종료
-            break;
-        }
-
-        // 알 수 없는 명령 처리
-        cerr << "Invalid command: " << command << endl;
-        return 1;
-    }
-
-    return 0;
-}

@@ -1,13 +1,40 @@
 // mctsnode.h
 #pragma once
 
-#include <vector>
-#include <memory>
-#include <random>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <limits>
+#include <algorithm>
+#include <unordered_set>
 
-struct Move {
-    int r1, c1, r2, c2;
-    bool isPass() const;
+using namespace std;
+const double EXPLORATION_CONSTANT = sqrt(2.0);
+class MCTSNode;
+using Board = std::vector<std::vector<int>>;
+using NodePtr = std::shared_ptr<class MCTSNode>;
+
+// MCTS Node
+class MCTSNode {
+public:
+    vector<vector<int>> board;
+    bool myTurn;
+    Move move; // 이 노드를 만들게 한 수
+    int visits = 0;
+    double wins = 0.0;
+	int myScore = 0;
+	int oppScore = 0;
+    vector<NodePtr> children;
+	vector<Move> validmoves;
+    NodePtr parent;
+	
+    MCTSNode(const vector<vector<int>>& board, bool myTurn, Move move, MCTSNode* parent = nullptr);
+
+    bool isFullyExpanded() const;
+
+    double uctValue() const ;
+
+    void expand();
+
+    NodePtr bestChild() const;
 };
-
-Move runMCTS(const std::vector<std::vector<int>>& board, int iterations, bool myTurn);
