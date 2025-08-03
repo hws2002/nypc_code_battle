@@ -51,6 +51,11 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwi
 vector<Move> getAllValidMoves(const vector<vector<int>>& board);
 
 
+//TODO : utils로 옮기기. (시뮬레이션시에 필요함)
+// 방법1 : incrementalUpdate
+void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
+					  Move& move, vector<Move>& validmoves);
+
 bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2);
 
 // 조브리스팅

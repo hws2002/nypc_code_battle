@@ -19,7 +19,7 @@ Move runMCTS(NodePtr rootNode,
 	auto now = std::chrono::high_resolution_clock::now();
 	MCTSNode* node;
 	int i = 0;
-	while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 1000 ){ // 1000ms 동안 생각
+	while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 600 ){ // 600ms 동안 생각
 		node = rootNode.get();
 		// Selection
 		while (node->isFullyExpanded() && !node->children.empty()) {
@@ -29,7 +29,10 @@ Move runMCTS(NodePtr rootNode,
 			return a->uctValue() < b->uctValue();
 			})->get();
 		}
-		if (!node->validmovesupdated) node->updateValidMoves();
+		if (!node->validmovesupdated) {
+			updateValidMoves(node->board, node->fenwick, node->move, node->validmoves);
+			node->validmovesupdated = true;
+		}
 		
 		// Expansion
 		// cout<<"start expansion"<<endl;
@@ -41,21 +44,20 @@ Move runMCTS(NodePtr rootNode,
 			make_shared<MCTSNode>(node->board, node->fenwick, !node->myTurn, Move{-1, -1, -1, -1}, 
 								  node->validmoves, node, node->myScore, node->oppScore) : 
 			node->children[0];
-		// //선택되었을때, move에 기반하여(이 노드를 만들게 한 수) validmoves(부모의 validmoves와 동일)를 수정한다.
-		if( !selected->validmovesupdated) selected->updateValidMoves();
-		bool result = simulate(selected->board, selected->myTurn, "random");
+
+		bool result = simulate(selected, "random");
 
 		// Backpropagation
-		// while (selected) {
-		// 	selected->visits++;
-		// 	if (selected->myTurn == myTurn && result)
-		// 		selected->wins += 1.0;
-		// 	else if (selected->myTurn != myTurn && !result)
-		// 		selected->wins += 1.0;
-		// 	selected = selected->parent;
-		// }
-		// now = std::chrono::high_resolution_clock::now();
-		// i++;
+		while (selected) {
+			selected->visits++;
+			if (selected->myTurn == myTurn && result)
+				selected->wins += 1.0;
+			else if (selected->myTurn != myTurn && !result)
+				selected->wins += 1.0;
+			selected = selected->parent;
+		}
+		now = std::chrono::high_resolution_clock::now();
+		i++;
 	}
 	cout<<"iterated "<<i<<"times. End runMCTS "<<endl;
 	if(rootNode->children.size() <= 0) {
@@ -68,42 +70,57 @@ Move runMCTS(NodePtr rootNode,
 }
 
 
-//TODO
-bool simulate(const vector<vector<int>>& initBoard, bool myStartTurn, string method) {
+//TODO : simulation 빠르게 하기
+bool simulate(NodePtr selected, string method) {
+	// 시뮬레이션 전에, move에 기반하여(이 노드를 만들게 한 수) validmoves(부모의 validmoves와 동일)를 수정한다.
+	if( !selected->validmovesupdated ) {
+		updateValidMoves(selected->board, selected->fenwick, selected->move, selected->validmoves);
+		selected->validmovesupdated = true;
+	}
+	vector<vector<int>> board = selected->board;
+	Fenwick2D fenwick = selected->fenwick;
+	int myScore = selected->myScore;
+	int oppScore = selected->oppScore;
+	bool turn = selected->myTurn;
+	vector<Move> moves = selected->validmoves;
+	Move m;
+	int idx=0;
 	if(method == "random"){
-		vector<vector<int>> board = initBoard;
-		bool turn = myStartTurn;
 		int passCount = 0;
-		int myScore = 0, oppScore = 0;
-		// vector<Move> moves = updateValidMoves(board, move validmoves);
-		while (passCount < 2) {
-			vector<Move> moves = getAllValidMoves(board);
-			Move m;
+		while (passCount < 4) {
+			// skip은 고려하지 않음
 			if (moves.empty()) {
-				m = {-1, -1, -1, -1};
+				m = Move(-1, -1, -1, -1);
 			} else {
-				m = moves[rand() % moves.size()];
+				idx = rand() % moves.size();
+				m = moves[idx];
+				
 			}
-
+			
 			if (m.isPass()) {
 				passCount++;
 			} else {
-				for (int r = m.r1; r <= m.r2; ++r)
-					for (int c = m.c1; c <= m.c2; ++c) {
-						if (board[r][c] > 0) {
-							if (turn) myScore++;
-							else oppScore++;
+				if( isValid(board, m.r1, m.c1, m.r2, m.c2)){
+					for (int r = m.r1; r <= m.r2; ++r)
+						for (int c = m.c1; c <= m.c2; ++c) {
+							if (board[r][c] > 0) {
+								if (turn) myScore+=m.size;
+								else oppScore+=m.size;
+							}
+							board[r][c] = 0;
 						}
-						board[r][c] = 0;
-					}
-				passCount = 0;
+					passCount = 0;
+					//update valid moves
+					updateValidMoves(board, fenwick, m, moves);
+				} else {
+					moves.erase(moves.begin() + idx);
+				}
 			}
 			turn = !turn;
 		}
+		
 		return myScore > oppScore; // true: 승, false: 패
 	} else { //TODO
 		return false;
 	}
 }
-
-

@@ -152,7 +152,41 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwi
 // 	return moves;
 // } 
 
-
+void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
+					  Move& move, vector<Move>& validmoves){
+	if( move.r1 == -1) return ;
+	// this->move가 발생한 후, validmoves를 재정의한다.
+	int maxHeight = 3; int maxWidth = 3;
+	int boardHeight = board.size();
+	int boardWidth = board[0].size();
+	
+	int rStart = max(0, move.r1 - maxHeight);
+    int rEnd = min(boardHeight - 1, move.r2 + maxHeight);
+    int cStart = max(0, move.c1 - maxWidth);
+    int cEnd = min(boardWidth - 1, move.c2 + maxWidth);
+	
+	// Fenwick Tree 업데이트
+	for(int r = move.r1; r <= move.r2; r++){
+		for(int c = move.c1; c <= move.c2; c++){
+			if( board[r][c] )
+				fenwick.update(r,c, -board[r][c]);
+		}
+	}
+	
+	// 후보 영역 탐색
+	for(int r1 = rStart; r1 <= rEnd; r1++){
+		for(int r2 = r1; r2 <= rEnd; r2++){
+			for (int c1 = cStart; c1 <= cEnd; c1++) {
+                for (int c2 = c1; c2 <= cEnd; c2++) {
+                    if (fenwick.query(r1,c1,r2,c2) == 10 && checkBorder(board,r1,c1,r2,c2)) {
+                        // 유효한 후보 영역으로 저장 또는 처리
+						validmoves.push_back(Move(r1,c1,r2,c2));
+                    }
+                }
+            }
+		}
+	}
+}
 
 // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
 bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2){
