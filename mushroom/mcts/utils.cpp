@@ -102,12 +102,12 @@ bool checkBorder(const vector<vector<int>>& board, int r1, int c1, int r2, int c
 }
 
 // Fenwick2D 기반
-vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
+vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwickSum) {
 	vector<Move> moves;
-	int R = board.size();
-	int C = board[0].size();
+	int R = fenwickSum.n;
+	int C = fenwickSum.m;
 	// const auto & prefixSum = computePrefixSum(board);
-    const auto & fenwickSum = computeFenwickSum(board);
+    // const auto & fenwickSum = computeFenwickSum(board);
 	for (int r1 = 0; r1 < R; ++r1) {
         for (int c1 = 0; c1 < C; ++c1) {
             for (int r2 = r1; r2 < R; ++r2) {
@@ -120,7 +120,13 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
             }
         }
     }
-
+	
+	
+	// 땅 크기를 기준으로 오름차순 정렬
+	sort(moves.begin(), moves.end(), [](const Move&a, const Move&b){
+		return a.size < b.size;
+	});
+	
 	return moves;
 }
 
@@ -145,3 +151,28 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
 //     }
 // 	return moves;
 // } 
+
+
+
+// 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
+bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2){
+	int sums = 0;
+	bool r1fit = false, c1fit = false, r2fit = false, c2fit = false;
+	for (int r = r1; r <= r2; r++)
+		for (int c = c1; c <= c2; c++)
+			if (board[r][c] != 0)
+			{
+				sums += board[r][c];
+				
+				if(sums > 10) return false;
+				if (r == r1)
+					r1fit = true;
+				if (r == r2)
+					r2fit = true;
+				if (c == c1)
+					c1fit = true;
+				if (c == c2)
+					c2fit = true;
+			}
+	return (sums == 10) && r1fit && r2fit && c1fit && c2fit;
+}

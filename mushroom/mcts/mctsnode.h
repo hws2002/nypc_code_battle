@@ -1,6 +1,7 @@
 // mctsnode.h
 #pragma once
 
+#include "utils.h"
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
@@ -25,14 +26,17 @@ public:
     double wins = 0.0;
 	int myScore = 0;
 	int oppScore = 0;
+	bool validmovesupdated = false;
     vector<NodePtr> children;
 	vector<Move> validmoves;
     NodePtr parent;
+	Fenwick2D fenwick;
 	
 	MCTSNode(){}; // default generator
-    MCTSNode(const vector<vector<int>>& board, bool myTurn,
+    MCTSNode(const vector<vector<int>>& board, Fenwick2D & fenwick, bool myTurn,
 			 Move move, const vector<Move> validMove,
 			 MCTSNode* parent = nullptr, int myScore = 0, int oppScore = 0);
+	
 
     bool isFullyExpanded() const;
 

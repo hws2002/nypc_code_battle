@@ -2,7 +2,7 @@
 #include <chrono>
 #include <vector>
 #include <iostream>
-#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -17,11 +17,12 @@ public:
 };
 
 class Fenwick2D {
-private:
+public:
     int n, m;
     vector<vector<int>> tree;
 
-public:
+	Fenwick2D(){};
+	
 	// 1-based structure
     Fenwick2D(int rows, int cols);
 
@@ -46,4 +47,13 @@ bool checkBorder(const vector<vector<int>>& board,
 				 int r1, int c1, int r2, int c2);
 
 // Fenwick2D or 2D PrefixSum
+vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwickSum);
 vector<Move> getAllValidMoves(const vector<vector<int>>& board);
+
+
+bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2);
+
+// 조브리스팅
+
+
+

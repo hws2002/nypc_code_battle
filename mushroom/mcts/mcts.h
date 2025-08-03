@@ -18,7 +18,5 @@ Move runMCTS(shared_ptr<class MCTSNode> rootNode,
 // rollout (시뮬레이션)
 bool simulate(const vector<vector<int>>& initBoard, bool myStartTurn, string method);
 
-bool isValid(vector<vector<int>> board, int r1, int c1, int r2, int c2);
-
 // 현재 상태에서 가능한 모든 유효한 직사각형 Move를 생성
 vector<Move> getAllValidMoves(const vector<vector<int>>& board);
