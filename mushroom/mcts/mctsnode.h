@@ -17,7 +17,7 @@ using Board = std::vector<std::vector<int>>;
 using NodePtr = std::shared_ptr<class MCTSNode>;
 
 // MCTS Node
-class MCTSNode {
+class MCTSNode : public std::enable_shared_from_this<MCTSNode> {
 public:
     vector<vector<int>> board;
     bool myTurn;
@@ -29,13 +29,13 @@ public:
 	bool validmovesupdated = false;
     vector<NodePtr> children;
 	vector<Move> validmoves;
-    NodePtr parent;
+    weak_ptr<MCTSNode> parent;
 	Fenwick2D fenwick;
 	
 	MCTSNode(){}; // default generator
     MCTSNode(const vector<vector<int>>& board, Fenwick2D & fenwick, bool myTurn,
 			 Move move, const vector<Move> validMove,
-			 MCTSNode* parent = nullptr, int myScore = 0, int oppScore = 0);
+			 NodePtr parent = nullptr, int myScore = 0, int oppScore = 0);
 	
 
     bool isFullyExpanded() const;

@@ -4,7 +4,7 @@
 #include "game.h"
 #include "utils.h"
 
-#define DEBUG
+// #define DEBUG
 
 // MCTS 수행 함수
 Move runMCTS(NodePtr rootNode, 
@@ -17,23 +17,25 @@ Move runMCTS(NodePtr rootNode,
 	auto start = std::chrono::high_resolution_clock::now();
     srand(time(NULL));
 	auto now = std::chrono::high_resolution_clock::now();
-	MCTSNode* node;
+	NodePtr node;
 	int i = 0;
 	while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 600 ){ // 600ms 동안 생각
-		node = rootNode.get();
+		node = rootNode;
 		// Selection
 		while (node->isFullyExpanded() && !node->children.empty()) {
-			node = max_element(
-			node->children.begin(), node->children.end(),
-			[](const NodePtr& a, const NodePtr& b) {
-			return a->uctValue() < b->uctValue();
-			})->get();
+			node = *std::max_element(
+				node->children.begin(), node->children.end(),
+				[](const NodePtr& a, const NodePtr& b) {
+				return a->uctValue() < b->uctValue();
+			});
 		}
 		if (!node->validmovesupdated) {
 			updateValidMoves(node->board, node->fenwick, node->move, node->validmoves);
 			node->validmovesupdated = true;
 		}
-		
+		#ifdef DEBUG 
+			cout<<"expand"<<endl;
+		#endif
 		// Expansion
 		// cout<<"start expansion"<<endl;
 		if (!node->isFullyExpanded()) node->expand();
@@ -44,9 +46,14 @@ Move runMCTS(NodePtr rootNode,
 			make_shared<MCTSNode>(node->board, node->fenwick, !node->myTurn, Move{-1, -1, -1, -1}, 
 								  node->validmoves, node, node->myScore, node->oppScore) : 
 			node->children[0];
-
+		#ifdef DEBUG 
+			cout<<"simulate"<<endl;
+		#endif
 		bool result = simulate(selected, "random");
-
+		
+		#ifdef DEBUG 
+			cout<<"backprop"<<endl;
+		#endif
 		// Backpropagation
 		while (selected) {
 			selected->visits++;
@@ -54,13 +61,13 @@ Move runMCTS(NodePtr rootNode,
 				selected->wins += 1.0;
 			else if (selected->myTurn != myTurn && !result)
 				selected->wins += 1.0;
-			selected = selected->parent;
+			selected = selected->parent.lock(); //weak_ptr -> shared_ptr
 		}
 		now = std::chrono::high_resolution_clock::now();
 		i++;
 	}
 	cout<<"iterated "<<i<<"times. End runMCTS "<<endl;
-	if(rootNode->children.size() <= 0) {
+	if(rootNode->children.empty()) {
 		#ifdef DEBUG
 			cout<<"pass this time"<<endl;
 		#endif

@@ -7,17 +7,28 @@ using namespace std;
 // MCTS Node
 MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool myTurn, 
 				   Move move, const vector<Move> validMoves,
-				  MCTSNode* parent, int myScore, int oppScore)
-	: board(board), fenwick(fenwick), myTurn(myTurn), move(move), validmoves(validMoves),parent(parent) {}
+				  NodePtr parent, int myScore, int oppScore)
+	: board(board), fenwick(fenwick), myTurn(myTurn), move(move), 
+	validmoves(validMoves),parent(parent) {}
 
 bool MCTSNode::isFullyExpanded() const {
 	return !children.empty();
 }
 
+// double MCTSNode::uctValue() const {
+// 	if (visits == 0) return numeric_limits<double>::infinity();
+// 	double exploitation = wins / visits;
+// 	double exploration = EXPLORATION_CONSTANT * sqrt(log(parent->visits + 1) / visits);
+// 	return exploitation + exploration;
+// }
 double MCTSNode::uctValue() const {
-	if (visits == 0) return numeric_limits<double>::infinity();
+	if (visits == 0) return std::numeric_limits<double>::infinity();
 	double exploitation = wins / visits;
-	double exploration = EXPLORATION_CONSTANT * sqrt(log(parent->visits + 1) / visits);
+
+	auto p = parent.lock();  // weak_ptr → shared_ptr
+	int parentVisits = p ? p->visits : 0;  // p가 nullptr일 수 있음 (루트 노드)
+
+	double exploration = EXPLORATION_CONSTANT * sqrt(log(parentVisits + 1) / visits);
 	return exploitation + exploration;
 }
 
@@ -39,7 +50,9 @@ void MCTSNode::expand() {
 			int ms = myScore; int os = oppScore;
 			if(myTurn) ms+= m.size;
 			else os += m.size;
-			children.push_back(make_shared<MCTSNode>(newBoard, this->fenwick, !myTurn, m, validmoves, this, ms, os));
+			auto self = shared_from_this();
+			children.push_back(make_shared<MCTSNode>(newBoard, this->fenwick, !myTurn, m, 
+													 validmoves, self, ms, os));
 		} else { //not valid anymore
 			validmoves.erase(it);
 		}
