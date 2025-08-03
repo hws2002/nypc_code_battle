@@ -1,17 +1,15 @@
 // game.h
 #pragma once
-#include <vector>
-#include <iostream>
+
+#include "utils.h"
 #include <memory>
 
 using namespace std;
 using Board = vector<vector<int>>;
-struct Move {
-public:
-    int r1, c1, r2, c2;
-    bool isPass() const;
-	void printMove() const ;
-};
+
+
+//전방선언
+class MCTSNode;
 
 class Game{
 public:
@@ -21,7 +19,7 @@ public:
 	int myscore;
 	int oppscore;
 	vector<Move> allValidMoves;
-	shared_ptr<MCTSNODE> rootNode;
+	shared_ptr<class MCTSNode> rootNode;
 	
     Game() {};
 
@@ -60,20 +58,3 @@ public:
     }
 };
 
-
-class Fenwick2D {
-private:
-    int n, m;
-    vector<vector<int>> tree;
-
-public:
-	// 1-based structure
-    Fenwick2D(int rows, int cols);
-
-	// 0-based indexing
-    void update(int x, int y, int delta);
-
-    int query(int x, int y) const;
-
-    int query(int x1, int y1, int x2, int y2) const; 
-};

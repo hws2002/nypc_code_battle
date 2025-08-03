@@ -52,12 +52,18 @@ int main()
                 }
                 board.push_back(boardRow);
             }
+			
+			#ifdef DEBUG
 			cout<<"board size : "<<board.size()<<","<<board[0].size()<<endl;
+			#endif
+			
             game = Game(board, first);
+			
 			#ifdef DEBUG
 			cout<<" board initialization done"<<endl;
 			#endif
-            continue;
+            
+			continue;
         }
 
         if (command == "TIME")

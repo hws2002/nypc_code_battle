@@ -6,6 +6,7 @@
 #include <ctime>
 #include <limits>
 #include <algorithm>
+#include <vector>
 #include <unordered_set>
 
 using namespace std;
@@ -28,6 +29,7 @@ public:
 	vector<Move> validmoves;
     NodePtr parent;
 	
+	MCTSNode(){}; // default generator
     MCTSNode(const vector<vector<int>>& board, bool myTurn,
 			 Move move, const vector<Move> validMove,
 			 MCTSNode* parent = nullptr);
@@ -40,5 +42,5 @@ public:
 
     NodePtr bestChild() const;
 	
-	void updatevalidMoves();
+	void updateValidMoves();
 };
