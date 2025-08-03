@@ -32,7 +32,7 @@ public:
 	MCTSNode(){}; // default generator
     MCTSNode(const vector<vector<int>>& board, bool myTurn,
 			 Move move, const vector<Move> validMove,
-			 MCTSNode* parent = nullptr);
+			 MCTSNode* parent = nullptr, int myScore = 0, int oppScore = 0);
 
     bool isFullyExpanded() const;
 

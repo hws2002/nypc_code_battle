@@ -11,28 +11,38 @@ Move runMCTS(NodePtr rootNode,
 			 const vector<vector<int>>& board, 
 			 int myTime, 
 			 bool myTurn) {
+	#ifdef DEBUG 
+		cout<<"runMCTS"<<endl;
+	#endif
 	auto start = std::chrono::high_resolution_clock::now();
     srand(time(NULL));
 	auto now = std::chrono::high_resolution_clock::now();
-		// while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 1000 ){ // 1000ms 동안 생각
-		// MCTSNode* node = rootNode.get();
-		// // Selection
-		// auto start = std::chrono::high_resolution_clock::now();
-		// while (node->isFullyExpanded() && !node->children.empty()) {
-		// node = max_element(
-		// node->children.begin(), node->children.end(),
-		// [](const NodePtr& a, const NodePtr& b) {
-		// return a->uctValue() < b->uctValue();
-		// })->get();
-		// }
+	MCTSNode* node;
+	int i = 0;
+	while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 1000 ){ // 1000ms 동안 생각
+		node = rootNode.get();
+		// Selection
+		while (node->isFullyExpanded() && !node->children.empty()) {
+			node = max_element(
+			node->children.begin(), node->children.end(),
+			[](const NodePtr& a, const NodePtr& b) {
+			return a->uctValue() < b->uctValue();
+			})->get();
+		}
+		
+		// Expansion
+		// cout<<"start expansion"<<endl;
+		if (!node->isFullyExpanded()) node->expand();
+		// cout<<"expansion done"<<endl;
 
-		// // Expansion
-		// if (!node->isFullyExpanded()) node->expand();
-		// // Simulation
-		// NodePtr selected = node->children.empty() ? make_shared<MCTSNode>(node->board, !node->myTurn, Move{-1, -1, -1, -1}, node) : node->children[0];
+		// Simulation
+		NodePtr selected = node->children.empty() ? 
+			make_shared<MCTSNode>(node->board, !node->myTurn, Move{-1, -1, -1, -1}, 
+								  vector<Move> {}, node, node->myScore, node->oppScore) : 
+			node->children[0];
 		// //선택되었을때, move에 기반하여(이 노드를 만들게 한 수) validmoves(부모의 validmoves와 동일)를 수정한다.
-		// selected->updateValidMoves();
-		// bool result = simulate(selected->board, selected->myTurn,"random");
+		selected->updateValidMoves();
+		bool result = simulate(selected->board, selected->myTurn,"random");
 
 		// // Backpropagation
 		// while (selected) {
@@ -43,8 +53,16 @@ Move runMCTS(NodePtr rootNode,
 		// selected->wins += 1.0;
 		// selected = selected->parent;
 		// }
-		// now = std::chrono::high_resolution_clock::now();
-		// }
+		now = std::chrono::high_resolution_clock::now();
+		i++;
+	}
+	cout<<"iterated "<<i<<"times. End runMCTS "<<endl;
+	if(rootNode->children.size() <= 0) {
+		#ifdef DEBUG
+			cout<<"pass this time"<<endl;
+		#endif
+		return Move{-1,-1,-1,-1};
+	}
     return rootNode->bestChild()->move;
 }
 

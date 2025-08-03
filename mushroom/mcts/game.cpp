@@ -8,13 +8,12 @@
 
 #define DEBUG
 
-
 Game::Game(const Board &board, bool first)
 	: board(board), first(first), passed(false), myscore(0), oppscore(0) {
 // auto start = std::chrono::high_resolution_clock::now();
 		allValidMoves = getAllValidMoves(board);
-		
-		rootNode = make_shared<MCTSNode>(board, first, Move{-1,-1,-1,-1},
+
+		rootNode = make_shared<MCTSNode>(board, first, Move(-1,-1,-1,-1),
 										allValidMoves, nullptr);
 		
 // auto end = std::chrono::high_resolution_clock::now();
@@ -22,20 +21,26 @@ Game::Game(const Board &board, bool first)
 
 // std::cout << "실행 시간: " << duration.count() << "microseconds" << std::endl;
 		#ifdef DEBUG
-			std::ofstream fout("initial_valid.txt");
+			cout<<"numnber of valid moves : "<<rootNode->validmoves.size()<<endl;
+			std::ofstream fout("initial_valid3.txt");
 			for (const auto &vm : allValidMoves) {
 				fout << "move : " << vm.r1 << " " << vm.c1 << " " << vm.r2 << " " << vm.c2
-					 << ". size : " << (vm.r2 - vm.r1 + 1) * (vm.c2 - vm.c1 + 1) << std::endl;
+					 << ". size : " << vm.size << std::endl;
 			}
 			fout.close();
-		
+
 		#endif
-};
+}
 
 vector<int> Game::calculateMove(int myTime, int oppTime){
 	Move best = runMCTS(this->rootNode, board, myTime, true);
+	updateRootNode(best);
 	return {best.r1, best.c1, best.r2, best.c2}; // 유효한 사각형이 없으면 패스
-};
+}
+
+void Game::updateRootNode(const Move & best){
+	
+}
 
 // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
 bool isValid(Board board, int r1, int c1, int r2, int c2){

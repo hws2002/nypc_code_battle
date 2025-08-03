@@ -26,15 +26,9 @@ public:
     Game(const Board &board, bool first);
 
 
-	
-    // ================================================================
-    // ===================== [필수 구현] ===============================
-    // 합이 10인 유효한 사각형을 찾아 {r1, c1, r2, c2} 벡터로 반환
-    // 없으면 {-1, -1, -1, -1}을 반환하여 패스를 의미함
-    // ================================================================
     vector<int> calculateMove(int myTime, int oppTime);
-    // =================== [필수 구현 끝] =============================
 
+	void updateRootNode(const Move & move);
     // 상대방의 수를 받아 보드에 반영
     void updateOpponentAction(const vector<int> &action, int time)
     {

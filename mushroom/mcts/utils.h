@@ -9,8 +9,11 @@ using namespace std;
 struct Move{
 public:
     int r1, c1, r2, c2;
+	int size;
     bool isPass() const;
 	void printMove() const;
+	Move(){};
+	Move(int r1, int c1, int r2, int c2);
 };
 
 class Fenwick2D {

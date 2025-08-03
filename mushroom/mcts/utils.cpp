@@ -1,5 +1,12 @@
 #include "utils.h"
 
+Move::Move(int r1, int c1, int r2, int c2): r1(r1),c1(c1),r2(r2),c2(c2)
+{
+	if( r1 != -1){
+		size = (r2-r1+1)*(c2-c1+1);
+	} else size = r1;
+}
+
 bool Move::isPass() const {
     return r1 == -1;
 }
@@ -107,7 +114,7 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
                 for (int c2 = c1; c2 < C; ++c2) {
                     int sum = fenwickSum.query(r1, c1, r2, c2);
                     if (sum == 10 && checkBorder(board, r1, c1, r2, c2)) {
-                        moves.push_back({r1, c1, r2, c2});
+                        moves.push_back(Move(r1, c1, r2, c2));
                     }
                 }
             }
@@ -130,7 +137,7 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board) {
 //                 for (int c2 = c1; c2 < C; ++c2) {
 //                     int sum = getRectSum(prefixSum, r1, c1, r2, c2);
 //                     if (sum == 10 && checkBorder(board, r1, c1, r2, c2)) {
-//                         moves.push_back({r1, c1, r2, c2});
+//                         moves.push_back(Move(r1, c1, r2, c2));
 //                     }
 //                 }
 //             }
