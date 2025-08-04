@@ -89,9 +89,8 @@ bool simulate(NodePtr selected, string method) {
 	int myScore = selected->myScore;
 	int oppScore = selected->oppScore;
 	bool turn = selected->myTurn;
-	vector<Move> moves = selected->validmoves;
+	list<Move> moves = selected->validmoves;
 	Move m;
-	int idx=0;
 	if(method == "random"){
 		int passCount = 0;
 		while (passCount < 4) {
@@ -99,9 +98,7 @@ bool simulate(NodePtr selected, string method) {
 			if (moves.empty()) {
 				m = Move(-1, -1, -1, -1);
 			} else {
-				idx = rand() % moves.size();
-				m = moves[idx];
-				
+				m = moves.back();
 			}
 			
 			if (m.isPass()) {
@@ -120,7 +117,7 @@ bool simulate(NodePtr selected, string method) {
 					//update valid moves
 					updateValidMoves(board, fenwick, m, moves);
 				} else {
-					moves.erase(moves.begin() + idx);
+					moves.pop_back();
 				}
 			}
 			turn = !turn;

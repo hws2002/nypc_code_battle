@@ -102,8 +102,8 @@ bool checkBorder(const vector<vector<int>>& board, int r1, int c1, int r2, int c
 }
 
 // Fenwick2D 기반
-vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwickSum) {
-	vector<Move> moves;
+list<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwickSum) {
+	list<Move> moves;
 	int R = fenwickSum.n;
 	int C = fenwickSum.m;
 	// const auto & prefixSum = computePrefixSum(board);
@@ -123,7 +123,10 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwi
 	
 	
 	// 땅 크기를 기준으로 오름차순 정렬
-	sort(moves.begin(), moves.end(), [](const Move&a, const Move&b){
+	// sort(moves.begin(), moves.end(), [](const Move&a, const Move&b){
+	// 	return a.size < b.size;
+	// });
+	moves.sort([](const Move& a, const Move& b){
 		return a.size < b.size;
 	});
 	
@@ -153,7 +156,7 @@ vector<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwi
 // } 
 
 void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
-					  Move& move, vector<Move>& validmoves){
+					  Move& move, list<Move>& validmoves){
 	if( move.r1 == -1) return ;
 	// this->move가 발생한 후, validmoves를 재정의한다.
 	int maxHeight = 3; int maxWidth = 3;

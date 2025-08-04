@@ -18,7 +18,7 @@ public:
     bool passed;               // 마지막 턴에 패스했는지 여부
 	int myscore;
 	int oppscore;
-	vector<Move> allValidMoves;
+	list<Move> allValidMoves;
 	shared_ptr<class MCTSNode> rootNode;
 	
     Game() {};

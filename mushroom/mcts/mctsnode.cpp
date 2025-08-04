@@ -6,7 +6,7 @@ using namespace std;
 
 // MCTS Node
 MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool myTurn, 
-				   Move move, const vector<Move> validMoves,
+				   Move move, const list<Move> validMoves,
 				  NodePtr parent, int myScore, int oppScore)
 	: board(board), fenwick(fenwick), myTurn(myTurn), move(move), 
 	validmoves(validMoves),parent(parent) {}
@@ -34,7 +34,7 @@ double MCTSNode::uctValue() const {
 
 void MCTSNode::expand() {
 	if (validmoves.empty()) validmoves.push_back({-1, -1, -1, -1});
-	auto it = validmoves.begin();
+	auto it = validmoves.end();
 	while(it != validmoves.begin()){
 		--it;
 		auto & m = *it;

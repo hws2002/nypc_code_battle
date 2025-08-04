@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <vector>
 #include <unordered_set>
+#include <list>
 
 using namespace std;
 const double EXPLORATION_CONSTANT = sqrt(2.0);
@@ -28,13 +29,14 @@ public:
 	int oppScore = 0;
 	bool validmovesupdated = false;
     vector<NodePtr> children;
-	vector<Move> validmoves;
+	// vector<Move> validmoves;
+	list<Move> validmoves;
     weak_ptr<MCTSNode> parent;
 	Fenwick2D fenwick;
 	
 	MCTSNode(){}; // default generator
     MCTSNode(const vector<vector<int>>& board, Fenwick2D & fenwick, bool myTurn,
-			 Move move, const vector<Move> validMove,
+			 Move move, const list<Move> validMove,
 			 NodePtr parent = nullptr, int myScore = 0, int oppScore = 0);
 	
 
