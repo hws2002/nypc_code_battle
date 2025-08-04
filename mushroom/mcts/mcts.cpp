@@ -46,6 +46,7 @@ Move runMCTS(NodePtr rootNode,
 		// Expansion
 		// cout<<"start expansion"<<endl;
 		if (!node->isFullyExpanded()) node->expand();
+		
 		// cout<<"expansion done"<<endl;
 		
 		// Simulation
@@ -54,7 +55,7 @@ Move runMCTS(NodePtr rootNode,
 								  node->validmoves, node->moveSet, node, node->myScore, node->oppScore) : 
 			node->children[0];
 		#ifdef DEBUG 
-			cout<<"simulate"<<endl;
+			cout<<"simulate with selected node "; selected->move.printMove(); cout<<endl;
 		#endif
 		bool result = simulate(selected, "random");
 		
@@ -85,7 +86,6 @@ Move runMCTS(NodePtr rootNode,
 	}
     return rootNode->bestChild()->move;
 }
-
 
 //TODO : simulation 빠르게 하기
 bool simulate(NodePtr selected, string method) {
@@ -126,6 +126,7 @@ bool simulate(NodePtr selected, string method) {
 						cout<<"opponent ";m.printMove(); cout<<endl;
 					}
 					#endif
+				turn = !turn;
 			} else {
 				if( isValid(board, m.r1, m.c1, m.r2, m.c2)){
 					for (int r = m.r1; r <= m.r2; ++r)
@@ -146,11 +147,11 @@ bool simulate(NodePtr selected, string method) {
 						cout<<"opponent ";m.printMove(); cout<<endl;
 					}
 					#endif
+					turn = !turn;
 				} else {
 					moves.pop_back();
 				}
 			}
-			turn = !turn;
 		}
 		
 		#ifdef DEBUG
