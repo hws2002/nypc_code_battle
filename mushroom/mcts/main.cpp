@@ -76,6 +76,9 @@ int main()
             game.updateMove(ret[0], ret[1], ret[2], ret[3], true);
 
             cout << ret[0] << " " << ret[1] << " " << ret[2] << " " << ret[3] << endl; // 내 행동 출력
+			#ifdef DEBUG
+				break;
+			#endif
             continue;
         }
 

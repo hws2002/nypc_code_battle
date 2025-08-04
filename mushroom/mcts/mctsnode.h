@@ -33,10 +33,11 @@ public:
 	list<Move> validmoves;
     weak_ptr<MCTSNode> parent;
 	Fenwick2D fenwick;
+	unordered_set<Move, MoveHasher> moveSet;
 	
 	MCTSNode(){}; // default generator
     MCTSNode(const vector<vector<int>>& board, Fenwick2D & fenwick, bool myTurn,
-			 Move move, const list<Move> validMove,
+			 Move move, const list<Move> validMoves, unordered_set<Move, MoveHasher>& moveSet,
 			 NodePtr parent = nullptr, int myScore = 0, int oppScore = 0);
 	
 

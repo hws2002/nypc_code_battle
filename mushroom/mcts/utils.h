@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <list>
+#include <unordered_set>
 
 using namespace std;
 
@@ -13,8 +14,26 @@ public:
 	int size;
     bool isPass() const;
 	void printMove() const;
-	Move(){};
 	Move(int r1, int c1, int r2, int c2);
+	Move(){}
+    bool operator==(const Move& other) const {
+        return r1 == other.r1 && c1 == other.c1 &&
+               r2 == other.r2 && c2 == other.c2 &&
+               size == other.size;
+    }
+};
+
+struct MoveHasher {
+    size_t operator()(const Move& m) const {
+        size_t h1 = hash<int>()(m.r1);
+        size_t h2 = hash<int>()(m.c1);
+        size_t h3 = hash<int>()(m.r2);
+        size_t h4 = hash<int>()(m.c2);
+        size_t h5 = hash<int>()(m.size);
+
+        // Combine hashes (standard hash combine technique)
+        return (((((h1 ^ (h2 << 1)) >> 1) ^ (h3 << 1)) >> 1) ^ (h4 << 1)) ^ (h5 << 1);
+    }
 };
 
 class Fenwick2D {
@@ -55,7 +74,8 @@ list<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick
 //TODO : utils로 옮기기. (시뮬레이션시에 필요함)
 // 방법1 : incrementalUpdate
 void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
-					  Move& move, list<Move>& validmoves);
+					  Move& move, list<Move>& validmoves,
+					 unordered_set<Move, MoveHasher>& moveSet);
 
 bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2);
 

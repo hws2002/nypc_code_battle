@@ -1,5 +1,7 @@
 #include "utils.h"
 
+#define DEBUG
+
 Move::Move(int r1, int c1, int r2, int c2): r1(r1),c1(c1),r2(r2),c2(c2)
 {
 	if( r1 != -1){
@@ -156,7 +158,8 @@ list<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick
 // } 
 
 void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
-					  Move& move, list<Move>& validmoves){
+					  Move& move, list<Move>& validmoves, 
+					  unordered_set<Move, MoveHasher>& moveSet){
 	if( move.r1 == -1) return ;
 	// this->move가 발생한 후, validmoves를 재정의한다.
 	int maxHeight = 3; int maxWidth = 3;
@@ -181,14 +184,25 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
 		for(int r2 = r1; r2 <= rEnd; r2++){
 			for (int c1 = cStart; c1 <= cEnd; c1++) {
                 for (int c2 = c1; c2 <= cEnd; c2++) {
-                    if (fenwick.query(r1,c1,r2,c2) == 10 && checkBorder(board,r1,c1,r2,c2)) {
-                        // 유효한 후보 영역으로 저장 또는 처리
-						validmoves.push_back(Move(r1,c1,r2,c2));
+					auto m = Move(r1,c1,r2,c2);
+                    if (fenwick.query(r1,c1,r2,c2) == 10 && 
+						checkBorder(board,r1,c1,r2,c2) &&
+						moveSet.find(m) == moveSet.end()
+					   ) {
+                        // 유효한 후보 영역으로 저장
+						validmoves.push_back(m);
+						moveSet.insert(m);
+						#ifdef DEBUG
+							cout<<"new valid "; validmoves.back().printMove();cout<<" added"<<endl;
+						#endif
                     }
                 }
             }
 		}
 	}
+	validmoves.sort([](const Move& a, const Move& b){
+		return a.size < b.size;
+	});
 }
 
 // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)

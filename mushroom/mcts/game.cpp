@@ -13,8 +13,12 @@ Game::Game(const Board &board, bool first)
 // auto start = std::chrono::high_resolution_clock::now();
 		Fenwick2D fenwick = computeFenwickSum(board);
 		allValidMoves = getAllValidMoves(board,fenwick);
+		unordered_set<Move, MoveHasher> moveSet;
+		for(auto & m : allValidMoves){
+			moveSet.insert(m);
+		}
 		rootNode = make_shared<MCTSNode>(board, fenwick, first, Move(-1,-1,-1,-1),
-										allValidMoves, nullptr);
+										allValidMoves, moveSet, nullptr,0,0);
 		rootNode->validmovesupdated = true;
 		
 // auto end = std::chrono::high_resolution_clock::now();
@@ -22,14 +26,13 @@ Game::Game(const Board &board, bool first)
 
 // std::cout << "실행 시간: " << duration.count() << "microseconds" << std::endl;
 		#ifdef DEBUG
-			cout<<"numnber of valid moves : "<<rootNode->validmoves.size()<<endl;
+			cout<<"number of valid moves : "<<rootNode->validmoves.size()<<endl;
 			std::ofstream fout("initial_valid3.txt");
 			for (const auto &vm : allValidMoves) {
 				fout << "move : " << vm.r1 << " " << vm.c1 << " " << vm.r2 << " " << vm.c2
 					 << ". size : " << vm.size << std::endl;
 			}
 			fout.close();
-
 		#endif
 }
 

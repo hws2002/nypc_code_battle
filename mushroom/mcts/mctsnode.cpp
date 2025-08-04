@@ -2,14 +2,16 @@
 #include "mcts.h"
 #include "mctsnode.h"
 
+#define DEBUG
+
 using namespace std;
 
 // MCTS Node
 MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool myTurn, 
-				   Move move, const list<Move> validMoves,
+				   Move move, const list<Move> validMoves, unordered_set<Move, MoveHasher>& moveSet,
 				  NodePtr parent, int myScore, int oppScore)
 	: board(board), fenwick(fenwick), myTurn(myTurn), move(move), 
-	validmoves(validMoves),parent(parent) {}
+	validmoves(validMoves),moveSet(moveSet), parent(parent), myScore(myScore), oppScore(oppScore) {}
 
 bool MCTSNode::isFullyExpanded() const {
 	return !children.empty();
@@ -46,15 +48,21 @@ void MCTSNode::expand() {
 						newBoard[r][c] = 0;
 			}
 			// child의 validmoves는 생성될때 바로 수정되지 않고, selected 됐을때 수정한다.
-			// 따라서 child node가 생성시의 validmoves는 부모의 validmoves와 동일하다.
 			int ms = myScore; int os = oppScore;
 			if(myTurn) ms+= m.size;
 			else os += m.size;
 			auto self = shared_from_this();
 			children.push_back(make_shared<MCTSNode>(newBoard, this->fenwick, !myTurn, m, 
-													 validmoves, self, ms, os));
+													 validmoves, moveSet, self, ms, os));
+			#ifdef DEBUG
+				// cout<<"created child with "; m.printMove(); cout<<endl;
+			#endif
 		} else { //not valid anymore
 			validmoves.erase(it);
+			moveSet.erase(*it);
+			#ifdef DEBUG
+				// m.printMove(); cout<<"is invalid"<<endl;
+			#endif
 		}
 	}
 }
