@@ -77,7 +77,7 @@ Move runMCTS(NodePtr rootNode,
 		now = std::chrono::high_resolution_clock::now();
 		i++;
 		#ifdef DEBUG
-		// if( i>= 10) break;
+			// if( i>= 10) break;
 		#endif
 	}
 
