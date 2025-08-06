@@ -217,6 +217,9 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
 
 // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)
 bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2){
+	if (r1 < 0 || c1 < 0 || r2 >= board.size() || c2 >= board[0].size()) {
+		return false; // 범위를 벗어남
+	}
 	int sums = 0;
 	bool r1fit = false, c1fit = false, r2fit = false, c2fit = false;
 	for (int r = r1; r <= r2; r++)

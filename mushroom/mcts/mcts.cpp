@@ -4,7 +4,7 @@
 #include "game.h"
 #include "utils.h"
 
-#define DEBUG
+// #define DEBUG
 // #define DEBUG_SIMUL
 
 // MCTS 수행 함수
@@ -54,7 +54,7 @@ Move runMCTS(NodePtr rootNode,
 		NodePtr selected = node->children.empty() ? 
 			make_shared<MCTSNode>(node->board, node->fenwick, !node->myTurn, Move{-1, -1, -1, -1}, 
 								node->validmoves, node->moveSet, node, node->myScore, node->oppScore) : 
-			node->children[0];
+			node->children.back();
 		#ifdef DEBUG 
 			cout<<"simulate with selected node "; selected->move.printMove(); cout<<endl;
 		#endif
@@ -108,8 +108,11 @@ bool simulate(NodePtr selected, string method) {
 	bool turn = selected->myTurn;
 	list<Move> moves = selected->validmoves;
 	auto moveSet = selected->moveSet;
-	cout<<"starts with score : myScore = "<<myScore<<", oppScore = "<<oppScore<<endl;
+	#ifdef DEBUG_SIMUL
+		cout<<"starts with score : myScore = "<<myScore<<", oppScore = "<<oppScore<<endl;
+	#endif
 	Move m;
+	list<Move>::iterator it;
 	if(method == "random"){
 		int passCount = 0;
 		while (passCount < 4) {
@@ -117,7 +120,10 @@ bool simulate(NodePtr selected, string method) {
 			if (moves.empty()) {
 				m = Move(-1, -1, -1, -1);
 			} else {
-				m = moves.back();
+				int idx = rand() % moves.size();
+				it = moves.begin();
+				for( ; it != moves.end() && idx > 0 ; --idx, ++it);
+				m = *it;
 			}
 			
 			if (m.isPass()) {
@@ -143,12 +149,12 @@ bool simulate(NodePtr selected, string method) {
 								board[r][c] = 0;
 							} else {
 								if (turn) {
-									myScore--;
-									oppScore++;
-								}
-								else {
 									oppScore--;
 									myScore++;
+								}
+								else {
+									myScore--;
+									oppScore++;
 								}
 							}
 						}
@@ -164,7 +170,7 @@ bool simulate(NodePtr selected, string method) {
 					updateValidMoves(board, fenwick, m, moves, moveSet);
 					turn = !turn;
 				} else {
-					moves.pop_back();
+					moves.erase(it);
 				}
 			}
 		}

@@ -12,8 +12,12 @@ TARGET = main
 # Default rule
 all: $(TARGET)
 
-run : all
+runtofile : all
 	./$(TARGET) < input.txt > output.txt
+
+run : all
+	./$(TARGET) < input.txt
+
 
 # Linking step
 $(TARGET): $(OBJS)

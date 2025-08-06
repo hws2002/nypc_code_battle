@@ -28,10 +28,12 @@ MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool my
 				for (int c = move.c1; c <= move.c2; ++c)
 					this->board[r][c] = 0;
 		}
+		it = validmoves.end();
 	}
 
 bool MCTSNode::isFullyExpanded() const {
-	return !children.empty();
+	auto _it = it;
+	return ++_it == validmoves.begin();
 }
 
 // double MCTSNode::uctValue() const {
@@ -53,30 +55,33 @@ double MCTSNode::uctValue() const {
 
 void MCTSNode::expand() {
 	if (validmoves.empty()) validmoves.push_back({-1, -1, -1, -1});
-	auto it = validmoves.end();
-	while(it != validmoves.begin()){
-		--it;
-		auto & m = *it;
-		if(isValid(board, m.r1, m.c1, m.r2, m.c2)){
+	if(it != validmoves.begin()){
+		bool added = false;
+		while(!added){
+			--it;
+			auto & m = *it;
+			if(isValid(board, m.r1, m.c1, m.r2, m.c2)){
 
-			// child의 validmoves는 생성될때 바로 수정되지 않고, selected 됐을때 수정한다.
-			int ms = myScore; int os = oppScore;
-			if(myTurn) ms+= m.size;
-			else os += m.size;
-			auto self = shared_from_this();
+				// child의 validmoves는 생성될때 바로 수정되지 않고, selected 됐을때 수정한다.
+				int ms = myScore; int os = oppScore;
+				if(myTurn) ms+= m.size;
+				else os += m.size;
+				auto self = shared_from_this();
 
-			//children 노드 생성시에, board와 fenwick를 수정생성한다.
-			children.push_back(make_shared<MCTSNode>(board, fenwick, !myTurn, m, 
-													validmoves, moveSet, self, ms, os));
-			#ifdef DEBUG
-				// cout<<"created child with "; m.printMove(); cout<<endl;
-			#endif
-		} else { //not valid anymore
-			validmoves.erase(it);
-			moveSet.erase(*it);
-			#ifdef DEBUG
-				// m.printMove(); cout<<"is invalid"<<endl;
-			#endif
+				//children 노드 생성시에, board와 fenwick를 수정생성한다.
+				children.push_back(make_shared<MCTSNode>(board, fenwick, !myTurn, m, 
+														validmoves, moveSet, self, ms, os));
+				#ifdef DEBUG
+					// cout<<"created child with "; m.printMove(); cout<<endl;
+				#endif
+				added = true;
+			} else { //not valid anymore
+				validmoves.erase(it);
+				moveSet.erase(*it);
+				#ifdef DEBUG
+					// m.printMove(); cout<<"is invalid"<<endl;
+				#endif
+			}
 		}
 	}
 }
