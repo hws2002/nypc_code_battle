@@ -39,7 +39,7 @@ struct MoveHasher {
 class Fenwick2D {
 public:
     int n, m;
-    vector<vector<int>> tree;
+    vector< vector<int> > tree;
 
 	Fenwick2D(){};
 	

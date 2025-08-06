@@ -1,6 +1,6 @@
 #include "utils.h"
 
-#define DEBUG
+// #define DEBUG
 
 Move::Move(int r1, int c1, int r2, int c2): r1(r1),c1(c1),r2(r2),c2(c2)
 {
@@ -162,12 +162,13 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
 					  unordered_set<Move, MoveHasher>& moveSet){
 	if( move.r1 == -1) return ;
 	// this->move가 발생한 후, validmoves를 재정의한다.
-	cout<<"start update valid moves"<<endl;
-	move.printMove();
+	#ifdef DEBUG 
+		cout<<"start update valid moves"<<endl;
+		move.printMove();
+	#endif
 	// for(int r = 4; r <= 10; r++){
 	// 	cout<<board[1][r]<<" ";
 	// }
-	cout<<endl;
 	int maxHeight = 3; int maxWidth = 3;
 	int boardHeight = board.size();
 	int boardWidth = board[0].size();
@@ -176,7 +177,7 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
     int rEnd = min(boardHeight - 1, move.r2 + maxHeight);
     int cStart = max(0, move.c1 - maxWidth);
     int cEnd = min(boardWidth - 1, move.c2 + maxWidth);
-	
+
 	// Fenwick Tree 업데이트
 	for(int r = move.r1; r <= move.r2; r++){
 		for(int c = move.c1; c <= move.c2; c++){
@@ -209,7 +210,9 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
 	validmoves.sort([](const Move& a, const Move& b){
 		return a.size < b.size;
 	});
-	cout<<"end updatevalidmoves"<<endl;
+	#ifdef DEBUG
+		cout<<"end updatevalidmoves"<<endl;
+	#endif
 }
 
 // 사각형 (r1, c1) ~ (r2, c2)이 유효한지 검사 (합이 10이고, 네 변을 모두 포함)

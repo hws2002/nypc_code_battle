@@ -5,6 +5,7 @@
 #include "utils.h"
 
 #define DEBUG
+// #define DEBUG_SIMUL
 
 // MCTS 수행 함수
 Move runMCTS(NodePtr rootNode, 
@@ -33,7 +34,7 @@ Move runMCTS(NodePtr rootNode,
 		#ifdef DEBUG
 			cout<<"node->"; node->move.printMove(); cout<<endl;
 		#endif
-		
+
 		if (!node->validmovesupdated) {
 			updateValidMoves(node->board, node->fenwick, 
 							 node->move, node->validmoves,
@@ -52,7 +53,7 @@ Move runMCTS(NodePtr rootNode,
 		// Simulation
 		NodePtr selected = node->children.empty() ? 
 			make_shared<MCTSNode>(node->board, node->fenwick, !node->myTurn, Move{-1, -1, -1, -1}, 
-								  node->validmoves, node->moveSet, node, node->myScore, node->oppScore) : 
+								node->validmoves, node->moveSet, node, node->myScore, node->oppScore) : 
 			node->children[0];
 		#ifdef DEBUG 
 			cout<<"simulate with selected node "; selected->move.printMove(); cout<<endl;
@@ -62,6 +63,7 @@ Move runMCTS(NodePtr rootNode,
 		#ifdef DEBUG 
 			cout<<"backprop"<<endl;
 		#endif
+
 		// Backpropagation
 		while (selected) {
 			selected->visits++;
@@ -74,7 +76,7 @@ Move runMCTS(NodePtr rootNode,
 		now = std::chrono::high_resolution_clock::now();
 		i++;
 		#ifdef DEBUG
-		if( i>= 1) break;
+		if( i>= 10) break;
 		#endif
 	}
 	cout<<"iterated "<<i<<"times. End runMCTS "<<endl;
@@ -90,6 +92,7 @@ Move runMCTS(NodePtr rootNode,
 //TODO : simulation 빠르게 하기
 bool simulate(NodePtr selected, string method) {
 	// 시뮬레이션 전에, move에 기반하여(이 노드를 만들게 한 수) validmoves(부모의 validmoves와 동일)를 수정한다.
+	// 시뮬레이션에서는 따로 moveSet을 수정하지 않는다.
 	if( !selected->validmovesupdated ) {
 		// 이때는 "추가"만 된다. 
 		updateValidMoves(selected->board, selected->fenwick,
@@ -105,7 +108,7 @@ bool simulate(NodePtr selected, string method) {
 	bool turn = selected->myTurn;
 	list<Move> moves = selected->validmoves;
 	auto moveSet = selected->moveSet;
-	cout<<"statrs with score : myScore = "<<myScore<<", oppScore = "<<oppScore<<endl;
+	cout<<"starts with score : myScore = "<<myScore<<", oppScore = "<<oppScore<<endl;
 	Move m;
 	if(method == "random"){
 		int passCount = 0;
@@ -119,7 +122,7 @@ bool simulate(NodePtr selected, string method) {
 			
 			if (m.isPass()) {
 				passCount++;
-					#ifdef DEBUG
+					#ifdef DEBUG_SIMUL
 					if(turn){
 						cout<<"my ";m.printMove(); cout<<endl;
 					} else {
@@ -132,21 +135,33 @@ bool simulate(NodePtr selected, string method) {
 					for (int r = m.r1; r <= m.r2; ++r)
 						for (int c = m.c1; c <= m.c2; ++c) {
 							if (board[r][c] > 0) {
-								if (turn) myScore+=m.size;
-								else oppScore+=m.size;
+								if (turn) 
+									myScore++;
+								else 
+									oppScore++;
+								fenwick.update(r, c, -board[r][c]);
+								board[r][c] = 0;
+							} else {
+								if (turn) {
+									myScore--;
+									oppScore++;
+								}
+								else {
+									oppScore--;
+									myScore++;
+								}
 							}
-							board[r][c] = 0;
 						}
 					passCount = 0;
-					//update valid moves
-					updateValidMoves(board, fenwick, m, moves, moveSet);
-					#ifdef DEBUG
+					#ifdef DEBUG_SIMUL
 					if(turn){
 						cout<<"my ";m.printMove(); cout<<endl;
 					} else {
 						cout<<"opponent ";m.printMove(); cout<<endl;
 					}
 					#endif
+					//update valid moves
+					updateValidMoves(board, fenwick, m, moves, moveSet);
 					turn = !turn;
 				} else {
 					moves.pop_back();
@@ -154,8 +169,7 @@ bool simulate(NodePtr selected, string method) {
 			}
 		}
 		
-		#ifdef DEBUG
-			
+		#ifdef DEBUG_SIMUL
 			cout<<"simulation done, myScore : "<<myScore<<", oppScore : "<<oppScore<<endl;
 			cout<<"I won : "<<(myScore > oppScore)<<endl;
 		#endif

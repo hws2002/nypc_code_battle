@@ -6,7 +6,7 @@
 #include <fstream>
 #include <chrono>
 
-#define DEBUG
+// #define DEBUG
 
 Game::Game(const Board &board, bool first)
 	: board(board), first(first), passed(false), myscore(0), oppscore(0) {

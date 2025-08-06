@@ -1,0 +1,12 @@
+OK
+runMCTS
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 6 1 6 4. size : 4
+
+starts with score : myScore = 4, oppScore = 0
+backprop
+node->move : 3 0 4 1. size : 4
+
+expand

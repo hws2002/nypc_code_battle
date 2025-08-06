@@ -11,7 +11,24 @@ MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool my
 				   Move move, const list<Move> validMoves, unordered_set<Move, MoveHasher>& moveSet,
 				  NodePtr parent, int myScore, int oppScore)
 	: board(board), fenwick(fenwick), myTurn(myTurn), move(move), 
-	validmoves(validMoves),moveSet(moveSet), parent(parent), myScore(myScore), oppScore(oppScore) {}
+	validmoves(validMoves),moveSet(moveSet), parent(parent), myScore(myScore), oppScore(oppScore) {
+		if(move == Move(-1, -1, -1, -1)) {
+			validmovesupdated = true;
+		} else {
+			validmovesupdated =  false;
+			for(int r = move.r1; r <= move.r2; ++r) {
+				for (int c = move.c1; c <= move.c2; ++c) {
+					if (board[r][c] > 0) {
+						this->fenwick.update(r, c, -board[r][c]);
+					}
+				}
+			}
+			// set board to 0
+			for(int r = move.r1; r <= move.r2; ++r) 
+				for (int c = move.c1; c <= move.c2; ++c)
+					this->board[r][c] = 0;
+		}
+	}
 
 bool MCTSNode::isFullyExpanded() const {
 	return !children.empty();
@@ -41,19 +58,16 @@ void MCTSNode::expand() {
 		--it;
 		auto & m = *it;
 		if(isValid(board, m.r1, m.c1, m.r2, m.c2)){
-			auto newBoard = board;
-			if (!m.isPass()) {
-				for (int r = m.r1; r <= m.r2; ++r)
-					for (int c = m.c1; c <= m.c2; ++c)
-						newBoard[r][c] = 0;
-			}
+
 			// child의 validmoves는 생성될때 바로 수정되지 않고, selected 됐을때 수정한다.
 			int ms = myScore; int os = oppScore;
 			if(myTurn) ms+= m.size;
 			else os += m.size;
 			auto self = shared_from_this();
-			children.push_back(make_shared<MCTSNode>(newBoard, this->fenwick, !myTurn, m, 
-													 validmoves, moveSet, self, ms, os));
+
+			//children 노드 생성시에, board와 fenwick를 수정생성한다.
+			children.push_back(make_shared<MCTSNode>(board, fenwick, !myTurn, m, 
+													validmoves, moveSet, self, ms, os));
 			#ifdef DEBUG
 				// cout<<"created child with "; m.printMove(); cout<<endl;
 			#endif
