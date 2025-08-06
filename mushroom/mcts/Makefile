@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -Wall -O2 -std=c++17
+CXXFLAGS = -Wall -O2 -std=c++17 
 
 # Find all .cpp files in current folder
 SRCS := $(wildcard *.cpp)
@@ -8,7 +8,6 @@ OBJS := $(SRCS:.cpp=.o)
 
 # Output binary
 TARGET = main
-
 # Default rule
 all: $(TARGET)
 

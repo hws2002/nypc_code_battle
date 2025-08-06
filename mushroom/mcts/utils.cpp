@@ -128,8 +128,10 @@ list<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick
 	// sort(moves.begin(), moves.end(), [](const Move&a, const Move&b){
 	// 	return a.size < b.size;
 	// });
+
+	// 땅 크기를 기준으로 내림차순 정렬
 	moves.sort([](const Move& a, const Move& b){
-		return a.size < b.size;
+		return a.size > b.size;
 	});
 	
 	return moves;

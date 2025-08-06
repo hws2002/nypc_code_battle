@@ -6,7 +6,7 @@
 #include <fstream>
 #include <chrono>
 
-// #define DEBUG
+#define DEBUG
 
 Game::Game(const Board &board, bool first)
 	: board(board), first(first), passed(false), myscore(0), oppscore(0) {
@@ -27,7 +27,7 @@ Game::Game(const Board &board, bool first)
 // std::cout << "실행 시간: " << duration.count() << "microseconds" << std::endl;
 		#ifdef DEBUG
 			cout<<"number of valid moves : "<<rootNode->validmoves.size()<<endl;
-			std::ofstream fout("initial_valid3.txt");
+			std::ofstream fout("initial_valid1.txt");
 			for (const auto &vm : allValidMoves) {
 				fout << "move : " << vm.r1 << " " << vm.c1 << " " << vm.r2 << " " << vm.c2
 					 << ". size : " << vm.size << std::endl;

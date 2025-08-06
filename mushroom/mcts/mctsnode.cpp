@@ -2,7 +2,7 @@
 #include "mcts.h"
 #include "mctsnode.h"
 
-#define DEBUG
+// #define DEBUG
 
 using namespace std;
 
@@ -24,16 +24,17 @@ MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool my
 				}
 			}
 			// set board to 0
-			for(int r = move.r1; r <= move.r2; ++r) 
+			for(int r = move.r1; r <= move.r2; ++r)
 				for (int c = move.c1; c <= move.c2; ++c)
 					this->board[r][c] = 0;
 		}
-		it = validmoves.end();
+		it = validmoves.begin();
 	}
 
 bool MCTSNode::isFullyExpanded() const {
-	auto _it = it;
-	return ++_it == validmoves.begin();
+	// auto _it = it;
+	// return ++_it == validmoves.begin();
+	return it == validmoves.end();
 }
 
 // double MCTSNode::uctValue() const {
@@ -55,10 +56,9 @@ double MCTSNode::uctValue() const {
 
 void MCTSNode::expand() {
 	if (validmoves.empty()) validmoves.push_back({-1, -1, -1, -1});
-	if(it != validmoves.begin()){
+	if(it != validmoves.end()){
 		bool added = false;
-		while(!added){
-			--it;
+		while(!added && it != validmoves.end()){
 			auto & m = *it;
 			if(isValid(board, m.r1, m.c1, m.r2, m.c2)){
 
@@ -75,9 +75,11 @@ void MCTSNode::expand() {
 					// cout<<"created child with "; m.printMove(); cout<<endl;
 				#endif
 				added = true;
+				it++;
 			} else { //not valid anymore
-				validmoves.erase(it);
-				moveSet.erase(*it);
+				auto it_copy = it;
+				moveSet.erase(m);
+				it = validmoves.erase(it_copy);
 				#ifdef DEBUG
 					// m.printMove(); cout<<"is invalid"<<endl;
 				#endif

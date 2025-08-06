@@ -1,64 +1,7096 @@
 OK
+number of valid moves : 45
 runMCTS
-node->move : -1 -1 -1 -1. size : 1
-
-expand
-simulate with selected node move : 5 14 6 15. size : 4
-
-backprop
-node->move : -1 -1 -1 -1. size : 1
-
-expand
-simulate with selected node move : 2 6 3 7. size : 4
-
-backprop
-node->move : -1 -1 -1 -1. size : 1
-
-expand
-simulate with selected node move : 1 13 1 16. size : 4
-
-backprop
-node->move : -1 -1 -1 -1. size : 1
-
-expand
-simulate with selected node move : 1 6 2 7. size : 4
-
-backprop
-node->move : -1 -1 -1 -1. size : 1
-
-expand
-simulate with selected node move : 0 8 3 8. size : 4
-
-backprop
+0
 node->move : -1 -1 -1 -1. size : 1
 
 expand
 simulate with selected node move : 0 6 3 6. size : 4
 
 backprop
+i :1
+0
 node->move : -1 -1 -1 -1. size : 1
 
 expand
-simulate with selected node move : 9 12 9 14. size : 3
+simulate with selected node move : 0 8 3 8. size : 4
 
 backprop
+i :2
+0
 node->move : -1 -1 -1 -1. size : 1
 
 expand
-simulate with selected node move : 9 7 9 9. size : 3
+simulate with selected node move : 1 6 2 7. size : 4
 
 backprop
+i :3
+0
 node->move : -1 -1 -1 -1. size : 1
 
 expand
-simulate with selected node move : 7 8 9 8. size : 3
+simulate with selected node move : 1 13 1 16. size : 4
 
 backprop
+i :4
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :5
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :6
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 13 4 13. size : 3
+
+backprop
+i :7
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 1 4 3. size : 3
+
+backprop
+i :8
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 1 6 1. size : 3
+
+backprop
+i :9
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 4 4 6. size : 3
+
+backprop
+i :10
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 4 6 4. size : 3
+
+backprop
+i :11
+0
 node->move : -1 -1 -1 -1. size : 1
 
 expand
 simulate with selected node move : 4 5 4 7. size : 3
 
 backprop
-iterated 10times. End runMCTS 
-5 14 6 15
+i :12
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 7 8 9 8. size : 3
+
+backprop
+i :13
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 9 7 9 9. size : 3
+
+backprop
+i :14
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 9 12 9 14. size : 3
+
+backprop
+i :15
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :16
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :17
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :18
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :19
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :20
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :21
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 5 2 6. size : 2
+
+backprop
+i :22
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 8 2 9. size : 2
+
+backprop
+i :23
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 2 14 2 15. size : 2
+
+backprop
+i :24
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 3 4 3 5. size : 2
+
+backprop
+i :25
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 3 5 4 5. size : 2
+
+backprop
+i :26
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 8 4 9. size : 2
+
+backprop
+i :27
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 10 5 10. size : 2
+
+backprop
+i :28
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 12 4 13. size : 2
+
+backprop
+i :29
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 13 5 13. size : 2
+
+backprop
+i :30
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 4 15 5 15. size : 2
+
+backprop
+i :31
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 5 3 6 3. size : 2
+
+backprop
+i :32
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 5 11 6 11. size : 2
+
+backprop
+i :33
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 6 2 6 3. size : 2
+
+backprop
+i :34
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 6 6 6 7. size : 2
+
+backprop
+i :35
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 6 15 6 16. size : 2
+
+backprop
+i :36
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 6 15 7 15. size : 2
+
+backprop
+i :37
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 7 3 8 3. size : 2
+
+backprop
+i :38
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 7 11 7 12. size : 2
+
+backprop
+i :39
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 8 0 8 1. size : 2
+
+backprop
+i :40
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 8 3 9 3. size : 2
+
+backprop
+i :41
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 8 13 9 13. size : 2
+
+backprop
+i :42
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 8 15 9 15. size : 2
+
+backprop
+i :43
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 9 5 9 6. size : 2
+
+backprop
+i :44
+0
+node->move : -1 -1 -1 -1. size : 1
+
+expand
+simulate with selected node move : 9 14 9 15. size : 2
+
+backprop
+i :45
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :46
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :47
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :48
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :49
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :50
+1
+node->move : 9 12 9 14. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :51
+1
+node->move : 0 7 0 8. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :52
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :53
+1
+node->move : 1 1 1 2. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :54
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :55
+1
+node->move : 2 5 2 6. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :56
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :57
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :58
+1
+node->move : 4 8 4 9. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :59
+1
+node->move : 4 12 4 13. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :60
+1
+node->move : 4 15 5 15. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :61
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :62
+1
+node->move : 5 11 6 11. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :63
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :64
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :65
+1
+node->move : 8 0 8 1. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :66
+1
+node->move : 8 3 9 3. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :67
+1
+node->move : 8 15 9 15. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :68
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :69
+1
+node->move : 9 14 9 15. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :70
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :71
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :72
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :73
+1
+node->move : 1 1 1 2. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :74
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :75
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :76
+1
+node->move : 4 8 4 9. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :77
+1
+node->move : 4 12 4 13. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :78
+1
+node->move : 4 15 5 15. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :79
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :80
+1
+node->move : 5 11 6 11. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :81
+1
+node->move : 8 0 8 1. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :82
+1
+node->move : 8 3 9 3. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :83
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :84
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :85
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :86
+1
+node->move : 2 13 4 13. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :87
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :88
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :89
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :90
+1
+node->move : 7 8 9 8. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :91
+1
+node->move : 9 7 9 9. size : 3
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :92
+1
+node->move : 1 12 1 13. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :93
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :94
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :95
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :96
+1
+node->move : 4 10 5 10. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :97
+1
+node->move : 4 13 5 13. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :98
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :99
+1
+node->move : 6 15 6 16. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :100
+1
+node->move : 6 15 7 15. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :101
+1
+node->move : 7 11 7 12. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :102
+1
+node->move : 8 13 9 13. size : 2
+
+expand
+simulate with selected node move : 0 6 3 6. size : 4
+
+backprop
+i :103
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :104
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :105
+1
+node->move : 1 1 1 2. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :106
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :107
+1
+node->move : 4 8 4 9. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :108
+1
+node->move : 4 15 5 15. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :109
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :110
+1
+node->move : 5 11 6 11. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :111
+1
+node->move : 8 0 8 1. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :112
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :113
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :114
+1
+node->move : 2 13 4 13. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :115
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :116
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :117
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :118
+1
+node->move : 7 8 9 8. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :119
+1
+node->move : 9 7 9 9. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :120
+1
+node->move : 9 12 9 14. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :121
+1
+node->move : 0 7 0 8. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :122
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :123
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :124
+1
+node->move : 2 5 2 6. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :125
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :126
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :127
+1
+node->move : 4 10 5 10. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :128
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :129
+1
+node->move : 6 15 6 16. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :130
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :131
+1
+node->move : 7 11 7 12. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :132
+1
+node->move : 8 13 9 13. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :133
+1
+node->move : 8 15 9 15. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :134
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :135
+1
+node->move : 9 14 9 15. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :136
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :137
+1
+node->move : 1 1 1 2. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :138
+1
+node->move : 4 8 4 9. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :139
+1
+node->move : 4 15 5 15. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :140
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :141
+1
+node->move : 5 11 6 11. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :142
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :143
+1
+node->move : 2 13 4 13. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :144
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :145
+1
+node->move : 7 8 9 8. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :146
+1
+node->move : 9 7 9 9. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :147
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :148
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :149
+1
+node->move : 2 5 2 6. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :150
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :151
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :152
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :153
+1
+node->move : 4 12 4 13. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :154
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :155
+1
+node->move : 6 15 6 16. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :156
+1
+node->move : 7 11 7 12. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :157
+1
+node->move : 8 3 9 3. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :158
+1
+node->move : 8 13 9 13. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :159
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :160
+1
+node->move : 9 14 9 15. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :161
+1
+node->move : 1 1 1 2. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :162
+1
+node->move : 4 15 5 15. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :163
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :164
+1
+node->move : 5 11 6 11. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :165
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :166
+1
+node->move : 9 7 9 9. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :167
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :168
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :169
+1
+node->move : 2 5 2 6. size : 2
+
+expand
+simulate with selected node move : 2 2 2 7. size : 6
+
+backprop
+i :170
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :171
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :172
+1
+node->move : 4 12 4 13. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :173
+1
+node->move : 7 11 7 12. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :174
+1
+node->move : 8 0 8 1. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :175
+1
+node->move : 8 3 9 3. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :176
+1
+node->move : 4 15 5 15. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :177
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :178
+1
+node->move : 5 11 6 11. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :179
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :180
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :181
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :182
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :183
+1
+node->move : 1 12 1 13. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :184
+1
+node->move : 4 13 5 13. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :185
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :186
+1
+node->move : 6 15 7 15. size : 2
+
+expand
+simulate with selected node move : 0 8 3 8. size : 4
+
+backprop
+i :187
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :188
+1
+node->move : 9 7 9 9. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :189
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :190
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :191
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :192
+1
+node->move : 4 8 4 9. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :193
+1
+node->move : 8 3 9 3. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :194
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :195
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :196
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :197
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :198
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :199
+1
+node->move : 9 12 9 14. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :200
+1
+node->move : 0 7 0 8. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :201
+1
+node->move : 1 12 1 13. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :202
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :203
+1
+node->move : 4 10 5 10. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :204
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :205
+1
+node->move : 6 15 7 15. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :206
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :207
+1
+node->move : 8 15 9 15. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :208
+1
+node->move : 1 1 1 2. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :209
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 2 7 2 10. size : 4
+
+backprop
+i :210
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :211
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :212
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 2 5 2 8. size : 4
+
+backprop
+i :213
+1
+node->move : 2 13 4 13. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :214
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :215
+1
+node->move : 7 8 9 8. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :216
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :217
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :218
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :219
+1
+node->move : 6 15 6 16. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :220
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :221
+1
+node->move : 8 13 9 13. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :222
+1
+node->move : 8 15 9 15. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :223
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :224
+1
+node->move : 9 14 9 15. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :225
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :226
+1
+node->move : 2 8 2 9. size : 2
+
+expand
+simulate with selected node move : 0 8 4 8. size : 5
+
+backprop
+i :227
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :228
+1
+node->move : 5 3 6 3. size : 2
+
+expand
+simulate with selected node move : 4 3 7 3. size : 4
+
+backprop
+i :229
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :230
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :231
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :232
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :233
+1
+node->move : 4 12 4 13. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :234
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :235
+1
+node->move : 6 15 6 16. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :236
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :237
+1
+node->move : 7 11 7 12. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :238
+1
+node->move : 8 0 8 1. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :239
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :240
+1
+node->move : 9 14 9 15. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :241
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :242
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :243
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :244
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :245
+1
+node->move : 9 7 9 9. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :246
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :247
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :248
+1
+node->move : 2 2 2 7. size : 6
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :249
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :250
+1
+node->move : 4 8 4 9. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :251
+1
+node->move : 4 12 4 13. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :252
+1
+node->move : 8 3 9 3. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :253
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :254
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :255
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :256
+1
+node->move : 0 15 0 16. size : 2
+
+expand
+simulate with selected node move : 0 14 1 16. size : 6
+
+backprop
+i :257
+1
+node->move : 2 0 2 1. size : 2
+
+expand
+simulate with selected node move : 1 1 4 1. size : 4
+
+backprop
+i :258
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :259
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :260
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :261
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :262
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :263
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :264
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :265
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :266
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :267
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :268
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :269
+1
+node->move : 4 13 5 13. size : 2
+
+expand
+simulate with selected node move : 1 6 2 7. size : 4
+
+backprop
+i :270
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :271
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :272
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :273
+1
+node->move : 9 12 9 14. size : 3
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :274
+1
+node->move : 0 7 0 8. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :275
+1
+node->move : 1 12 1 13. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :276
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :277
+1
+node->move : 4 10 5 10. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :278
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :279
+1
+node->move : 6 15 7 15. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :280
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :281
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 6 2 8. size : 6
+
+backprop
+i :282
+1
+node->move : 2 13 4 13. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :283
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :284
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :285
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :286
+1
+node->move : 7 8 9 8. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :287
+1
+node->move : 1 12 1 13. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :288
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :289
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :290
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :291
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :292
+1
+node->move : 6 15 7 15. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :293
+1
+node->move : 8 13 9 13. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :294
+1
+node->move : 8 15 9 15. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :295
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :296
+1
+node->move : 0 8 4 8. size : 5
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :297
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :298
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 7 4 8. size : 6
+
+backprop
+i :299
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 14 3 14. size : 4
+
+backprop
+i :300
+1
+node->move : 2 13 4 13. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :301
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :302
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :303
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :304
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :305
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :306
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :307
+1
+node->move : 6 15 6 16. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :308
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :309
+1
+node->move : 7 11 7 12. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :310
+1
+node->move : 8 0 8 1. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :311
+1
+node->move : 8 15 9 15. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :312
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :313
+1
+node->move : 9 14 9 15. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :314
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :315
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :316
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :317
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :318
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :319
+1
+node->move : 4 4 4 6. size : 3
+
+expand
+simulate with selected node move : 4 2 4 8. size : 7
+
+backprop
+i :320
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 4 4 5 5. size : 4
+
+backprop
+i :321
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :322
+1
+node->move : 3 4 3 5. size : 2
+
+expand
+simulate with selected node move : 3 5 4 6. size : 4
+
+backprop
+i :323
+1
+node->move : 3 5 4 5. size : 2
+
+expand
+simulate with selected node move : 4 4 5 5. size : 4
+
+backprop
+i :324
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :325
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :326
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :327
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :328
+1
+node->move : 9 5 9 6. size : 2
+
+expand
+simulate with selected node move : 9 4 9 8. size : 5
+
+backprop
+i :329
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :330
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :331
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :332
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :333
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :334
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :335
+1
+node->move : 1 1 4 1. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :336
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :337
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :338
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :339
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :340
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :341
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :342
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :343
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :344
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :345
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :346
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :347
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :348
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :349
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :350
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :351
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :352
+1
+node->move : 9 12 9 14. size : 3
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :353
+1
+node->move : 0 7 0 8. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :354
+1
+node->move : 4 10 5 10. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :355
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 3 6 4 8. size : 6
+
+backprop
+i :356
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :357
+1
+node->move : 7 8 9 8. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :358
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :359
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :360
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :361
+1
+node->move : 4 10 5 10. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :362
+1
+node->move : 6 15 7 15. size : 2
+
+expand
+simulate with selected node move : 5 15 6 16. size : 4
+
+backprop
+i :363
+1
+node->move : 8 13 9 13. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :364
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :365
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :366
+1
+node->move : 4 1 4 3. size : 3
+
+expand
+simulate with selected node move : 3 0 4 2. size : 6
+
+backprop
+i :367
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 4 0 4 3. size : 4
+
+backprop
+i :368
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 4 3 4 6. size : 4
+
+backprop
+i :369
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :370
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :371
+1
+node->move : 6 2 6 3. size : 2
+
+expand
+simulate with selected node move : 6 1 6 4. size : 4
+
+backprop
+i :372
+1
+node->move : 6 6 6 7. size : 2
+
+expand
+simulate with selected node move : 6 7 7 8. size : 4
+
+backprop
+i :373
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :374
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :375
+1
+node->move : 7 3 8 3. size : 2
+
+expand
+simulate with selected node move : 6 3 7 4. size : 4
+
+backprop
+i :376
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :377
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :378
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :379
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :380
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 5 1 8. size : 4
+
+backprop
+i :381
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :382
+1
+node->move : 4 13 5 13. size : 2
+
+expand
+simulate with selected node move : 1 13 1 16. size : 4
+
+backprop
+i :383
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :384
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :385
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :386
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :387
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :388
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :389
+1
+node->move : 4 4 6 4. size : 3
+
+expand
+simulate with selected node move : 3 4 8 4. size : 6
+
+backprop
+i :390
+1
+node->move : 4 5 4 7. size : 3
+
+expand
+simulate with selected node move : 4 2 4 8. size : 7
+
+backprop
+i :391
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :392
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :393
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :394
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :395
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :396
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :397
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :398
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :399
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :400
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :401
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :402
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :403
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :404
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :405
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :406
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :407
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :408
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :409
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :410
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :411
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :412
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :413
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :414
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :415
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :416
+1
+node->move : 1 1 4 1. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :417
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :418
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :419
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :420
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :421
+1
+node->move : 4 2 4 8. size : 7
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :422
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :423
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :424
+1
+node->move : 2 2 2 7. size : 6
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :425
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :426
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :427
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :428
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :429
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :430
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :431
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :432
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :433
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :434
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :435
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :436
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :437
+1
+node->move : 2 7 2 10. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :438
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :439
+1
+node->move : 0 14 1 16. size : 6
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :440
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :441
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :442
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :443
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :444
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :445
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 3 1 7 1. size : 5
+
+backprop
+i :446
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :447
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :448
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :449
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :450
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :451
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :452
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :453
+1
+node->move : 2 5 2 8. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :454
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :455
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :456
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :457
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :458
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :459
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :460
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :461
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :462
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :463
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :464
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :465
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :466
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :467
+1
+node->move : 2 4 2 5. size : 2
+
+expand
+simulate with selected node move : 2 2 2 7. size : 6
+
+backprop
+i :468
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :469
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 0 14 3 14. size : 4
+
+backprop
+i :470
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :471
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :472
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :473
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :474
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :475
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :476
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :477
+1
+node->move : 3 5 4 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :478
+1
+node->move : 4 4 5 5. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :479
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :480
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :481
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :482
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :483
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :484
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :485
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :486
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :487
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :488
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :489
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :490
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :491
+1
+node->move : 9 12 9 14. size : 3
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :492
+1
+node->move : 0 7 0 8. size : 2
+
+expand
+simulate with selected node move : 0 8 1 9. size : 4
+
+backprop
+i :493
+1
+node->move : 4 2 4 8. size : 7
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :494
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :495
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :496
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :497
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :498
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :499
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :500
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :501
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :502
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :503
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :504
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :505
+1
+node->move : 3 0 4 2. size : 6
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :506
+1
+node->move : 2 2 2 7. size : 6
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :507
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :508
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :509
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :510
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 2 5 2 8. size : 4
+
+backprop
+i :511
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :512
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :513
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :514
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 4 14 7 14. size : 4
+
+backprop
+i :515
+1
+node->move : 4 13 5 13. size : 2
+
+expand
+simulate with selected node move : 2 6 3 7. size : 4
+
+backprop
+i :516
+1
+node->move : 4 13 5 13. size : 2
+
+expand
+simulate with selected node move : 5 14 6 15. size : 4
+
+backprop
+i :517
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :518
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :519
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :520
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :521
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :522
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :523
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :524
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :525
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :526
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :527
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :528
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :529
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :530
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :531
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :532
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :533
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :534
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :535
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :536
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :537
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :538
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :539
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :540
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :541
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :542
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :543
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :544
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :545
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :546
+1
+node->move : 3 5 4 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :547
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :548
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :549
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :550
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :551
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :552
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :553
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :554
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :555
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :556
+1
+node->move : 1 6 2 8. size : 6
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :557
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :558
+1
+node->move : 4 4 5 5. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :559
+1
+node->move : 4 2 4 8. size : 7
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :560
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :561
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :562
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :563
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :564
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :565
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :566
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :567
+1
+node->move : 9 4 9 8. size : 5
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :568
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :569
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :570
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :571
+1
+node->move : 0 14 3 14. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :572
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :573
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :574
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :575
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :576
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :577
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :578
+1
+node->move : 4 3 7 3. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :579
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :580
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :581
+1
+node->move : 4 1 6 1. size : 3
+
+expand
+simulate with selected node move : 3 0 5 1. size : 6
+
+backprop
+i :582
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :583
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :584
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :585
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :586
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :587
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :588
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :589
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :590
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :591
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :592
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :593
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :594
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :595
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :596
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :597
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :598
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :599
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :600
+1
+node->move : 1 5 1 8. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :601
+1
+node->move : 2 14 2 15. size : 2
+
+expand
+simulate with selected node move : 0 13 2 14. size : 6
+
+backprop
+i :602
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :603
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :604
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :605
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :606
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :607
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :608
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :609
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :610
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :611
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :612
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :613
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :614
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :615
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 14 2 15. size : 2
+
+backprop
+i :616
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :617
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :618
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :619
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :620
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :621
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :622
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :623
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 5 13 5 16. size : 4
+
+backprop
+i :624
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :625
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :626
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :627
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :628
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :629
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :630
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :631
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :632
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :633
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :634
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :635
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :636
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :637
+1
+node->move : 2 7 4 8. size : 6
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :638
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :639
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :640
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :641
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :642
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :643
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :644
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :645
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :646
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :647
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :648
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :649
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :650
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :651
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :652
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :653
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :654
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :655
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :656
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :657
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :658
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :659
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :660
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :661
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :662
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :663
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :664
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :665
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :666
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :667
+1
+node->move : 3 5 4 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :668
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :669
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :670
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :671
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :672
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :673
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :674
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :675
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :676
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :677
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :678
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :679
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :680
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :681
+1
+node->move : 2 7 2 10. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :682
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :683
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :684
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 3 4 3 5. size : 2
+
+backprop
+i :685
+1
+node->move : 0 8 4 8. size : 5
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :686
+1
+node->move : 4 14 7 14. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :687
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :688
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :689
+1
+node->move : 5 13 5 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :690
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :691
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :692
+1
+node->move : 0 14 3 14. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :693
+1
+node->move : 4 4 5 5. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :694
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :695
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :696
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :697
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :698
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :699
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :700
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 3 5 4 5. size : 2
+
+backprop
+i :701
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :702
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :703
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :704
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :705
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :706
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :707
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :708
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :709
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :710
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :711
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :712
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :713
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :714
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :715
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :716
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :717
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :718
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :719
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :720
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :721
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :722
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :723
+1
+node->move : 6 7 7 8. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :724
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :725
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :726
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :727
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :728
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :729
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :730
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :731
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :732
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :733
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :734
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :735
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :736
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :737
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :738
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :739
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :740
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :741
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :742
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :743
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :744
+1
+node->move : 0 8 4 8. size : 5
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :745
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :746
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :747
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :748
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :749
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :750
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :751
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :752
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :753
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :754
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :755
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :756
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :757
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :758
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :759
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :760
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :761
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :762
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :763
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :764
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :765
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :766
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :767
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :768
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :769
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :770
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :771
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :772
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :773
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :774
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :775
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :776
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :777
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :778
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :779
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :780
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :781
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :782
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :783
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :784
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :785
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :786
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :787
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :788
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :789
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :790
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :791
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :792
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :793
+1
+node->move : 0 14 3 14. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :794
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :795
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :796
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :797
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :798
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :799
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :800
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :801
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :802
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :803
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :804
+1
+node->move : 5 15 6 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :805
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :806
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :807
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :808
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :809
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :810
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :811
+1
+node->move : 2 5 2 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :812
+1
+node->move : 1 6 2 8. size : 6
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :813
+1
+node->move : 1 5 1 8. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :814
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :815
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :816
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :817
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :818
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 7 0 8. size : 2
+
+backprop
+i :819
+1
+node->move : 0 8 4 8. size : 5
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :820
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :821
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :822
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :823
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 8 2 9. size : 2
+
+backprop
+i :824
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 4 8 4 9. size : 2
+
+backprop
+i :825
+1
+node->move : 2 2 2 7. size : 6
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :826
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :827
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 4 10 5 10. size : 2
+
+backprop
+i :828
+1
+node->move : 3 0 4 2. size : 6
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :829
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :830
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :831
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :832
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :833
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :834
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :835
+1
+node->move : 0 8 3 8. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :836
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :837
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :838
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :839
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 8 2 9. size : 2
+
+backprop
+i :840
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :841
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :842
+1
+node->move : 1 1 4 1. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :843
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :844
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :845
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :846
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :847
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :848
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :849
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 2 0 2 1. size : 2
+
+backprop
+i :850
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 2 4 2 5. size : 2
+
+backprop
+i :851
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :852
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :853
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :854
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :855
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :856
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :857
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :858
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :859
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :860
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :861
+1
+node->move : 1 6 2 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :862
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :863
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :864
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :865
+1
+node->move : 9 4 9 8. size : 5
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :866
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :867
+1
+node->move : 2 6 3 7. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :868
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :869
+1
+node->move : 0 8 1 9. size : 4
+
+expand
+simulate with selected node move : 0 15 0 16. size : 2
+
+backprop
+i :870
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :871
+1
+node->move : 1 13 1 16. size : 4
+
+expand
+simulate with selected node move : 2 8 2 9. size : 2
+
+backprop
+i :872
+1
+node->move : 2 7 4 8. size : 6
+
+expand
+simulate with selected node move : 1 1 1 2. size : 2
+
+backprop
+i :873
+1
+node->move : 0 6 3 6. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :874
+1
+node->move : 5 14 6 15. size : 4
+
+expand
+simulate with selected node move : 1 12 1 13. size : 2
+
+backprop
+i :875
+iterated 875times. End runMCTS 
+here is uct of each child of rootNode
+move : move : 0 6 3 6. size : 4
+, uct : 1.3121
+move : move : 0 8 3 8. size : 4
+, uct : 1.37313
+move : move : 1 6 2 7. size : 4
+, uct : 1.32865
+move : move : 1 13 1 16. size : 4
+, uct : 1.3271
+move : move : 2 6 3 7. size : 4
+, uct : 1.34097
+move : move : 5 14 6 15. size : 4
+, uct : 1.36339
+move : move : 2 13 4 13. size : 3
+, uct : 1.33279
+move : move : 4 1 4 3. size : 3
+, uct : 1.33853
+move : move : 4 1 6 1. size : 3
+, uct : 1.31265
+move : move : 4 4 4 6. size : 3
+, uct : 1.33027
+move : move : 4 4 6 4. size : 3
+, uct : 1.36339
+move : move : 4 5 4 7. size : 3
+, uct : 1.3271
+move : move : 7 8 9 8. size : 3
+, uct : 1.36339
+move : move : 9 7 9 9. size : 3
+, uct : 1.33027
+move : move : 9 12 9 14. size : 3
+, uct : 1.33474
+move : move : 0 7 0 8. size : 2
+, uct : 1.34097
+move : move : 0 15 0 16. size : 2
+, uct : 1.33027
+move : move : 1 1 1 2. size : 2
+, uct : 1.33027
+move : move : 1 12 1 13. size : 2
+, uct : 1.33806
+move : move : 2 0 2 1. size : 2
+, uct : 1.33279
+move : move : 2 4 2 5. size : 2
+, uct : 1.32865
+move : move : 2 5 2 6. size : 2
+, uct : 1.33806
+move : move : 2 8 2 9. size : 2
+, uct : 1.33474
+move : move : 2 14 2 15. size : 2
+, uct : 1.36339
+move : move : 3 4 3 5. size : 2
+, uct : 1.35778
+move : move : 3 5 4 5. size : 2
+, uct : 1.32313
+move : move : 4 8 4 9. size : 2
+, uct : 1.3271
+move : move : 4 10 5 10. size : 2
+, uct : 1.36339
+move : move : 4 12 4 13. size : 2
+, uct : 1.33853
+move : move : 4 13 5 13. size : 2
+, uct : 1.3271
+move : move : 4 15 5 15. size : 2
+, uct : 1.33027
+move : move : 5 3 6 3. size : 2
+, uct : 1.31819
+move : move : 5 11 6 11. size : 2
+, uct : 1.33806
+move : move : 6 2 6 3. size : 2
+, uct : 1.34097
+move : move : 6 6 6 7. size : 2
+, uct : 1.35046
+move : move : 6 15 6 16. size : 2
+, uct : 1.34097
+move : move : 6 15 7 15. size : 2
+, uct : 1.35778
+move : move : 7 3 8 3. size : 2
+, uct : 1.31265
+move : move : 7 11 7 12. size : 2
+, uct : 1.36339
+move : move : 8 0 8 1. size : 2
+, uct : 1.32313
+move : move : 8 3 9 3. size : 2
+, uct : 1.35046
+move : move : 8 13 9 13. size : 2
+, uct : 1.35778
+move : move : 8 15 9 15. size : 2
+, uct : 1.33806
+move : move : 9 5 9 6. size : 2
+, uct : 1.3271
+move : move : 9 14 9 15. size : 2
+, uct : 1.31819
+4 1 4 3

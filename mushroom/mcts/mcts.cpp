@@ -8,9 +8,9 @@
 // #define DEBUG_SIMUL
 
 // MCTS 수행 함수
-Move runMCTS(NodePtr rootNode, 
-			 const vector<vector<int>>& board, 
-			 int myTime, 
+Move runMCTS(NodePtr rootNode,
+			 const vector<vector<int>>& board,
+			 int myTime,
 			 bool myTurn) {
 	#ifdef DEBUG 
 		cout<<"runMCTS"<<endl;
@@ -55,6 +55,7 @@ Move runMCTS(NodePtr rootNode,
 			make_shared<MCTSNode>(node->board, node->fenwick, !node->myTurn, Move{-1, -1, -1, -1}, 
 								node->validmoves, node->moveSet, node, node->myScore, node->oppScore) : 
 			node->children.back();
+
 		#ifdef DEBUG 
 			cout<<"simulate with selected node "; selected->move.printMove(); cout<<endl;
 		#endif
@@ -76,10 +77,18 @@ Move runMCTS(NodePtr rootNode,
 		now = std::chrono::high_resolution_clock::now();
 		i++;
 		#ifdef DEBUG
-		if( i>= 10) break;
+		// if( i>= 10) break;
 		#endif
 	}
+
 	cout<<"iterated "<<i<<"times. End runMCTS "<<endl;
+	#ifdef DEBUG
+		cout<<"here is uct of each child of rootNode"<<endl;
+		for(auto & child : rootNode->children){
+			cout<<"move : "; child->move.printMove();
+			cout<<", uct : "<<child->uctValue()<<endl;
+		}
+	#endif
 	if(rootNode->children.empty()) {
 		#ifdef DEBUG
 			cout<<"pass this time"<<endl;
