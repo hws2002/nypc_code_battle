@@ -181,13 +181,13 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
     int cEnd = min(boardWidth - 1, move.c2 + maxWidth);
 
 	// Fenwick Tree 업데이트
-	for(int r = move.r1; r <= move.r2; r++){
-		for(int c = move.c1; c <= move.c2; c++){
-			if( board[r][c] > 0) // -1은 상대방이 이미 차지한 땅을 의미한다.
-				fenwick.update(r,c, -board[r][c]);
-		}
-	}
-	
+	// for(int r = move.r1; r <= move.r2; r++){
+	// 	for(int c = move.c1; c <= move.c2; c++){
+	// 		if( board[r][c] > 0) // -1은 상대방이 이미 차지한 땅을 의미한다.
+	// 			fenwick.update(r,c, -board[r][c]);
+	// 	}
+	// }
+
 	// 후보 영역 탐색
 	for(int r1 = rStart; r1 <= rEnd; r1++){
 		for(int r2 = r1; r2 <= rEnd; r2++){

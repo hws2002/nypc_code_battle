@@ -14,7 +14,7 @@ class MCTSNode;
 
 class Game{
 public:
-    Board board; // 게임 보드 (2차원 벡터)
+    Board board; // 게임 보드 (2차원 벡터) ->맨처음 초기화시에만 쓰임. 이조차도 rootNode를 전역변수로 설정하면 더 안쓰이게 될듯.
     bool first;                // 선공 여부
     bool passed;               // 마지막 턴에 패스했는지 여부
 	int myscore;
@@ -29,12 +29,9 @@ public:
 
     vector<int> calculateMove(int myTime, int oppTime);
 
-	void updateRootNode(const Move & move);
+	void Game::updateRootNode(const Move & best, bool myTurn);
     // 상대방의 수를 받아 보드에 반영
-    void updateOpponentAction(const vector<int> &action, int time)
-    {
-        updateMove(action[0], action[1], action[2], action[3], false);
-    }
+    void updateOpponentAction(const vector<int> &action, int time);
 
     // 주어진 수를 보드에 반영 (칸을 0으로 지움)
     void updateMove(int r1, int c1, int r2, int c2, bool isMyMove)
