@@ -4,6 +4,7 @@
 #include "globals.h"
 #include "utils.h"
 #include <vector>
+#include <queue>
 #include <memory>
 #include <random>
 
@@ -22,3 +23,6 @@ bool simulate(shared_ptr<class MCTSNode> selected, string method="random");
 
 // 현재 상태에서 가능한 모든 유효한 직사각형 Move를 생성
 // vector<Move> getAllValidMoves(const vector<vector<int>>& board);
+
+// backpropagation 함수
+void backpropagate(shared_ptr<class MCTSNode> node, bool result, bool myTurn);

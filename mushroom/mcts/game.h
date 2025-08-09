@@ -29,9 +29,9 @@ public:
 
     vector<int> calculateMove(int myTime, int oppTime);
 
-	void Game::updateRootNode(const Move & best, bool myTurn);
+	void updateRootNode(const Move & best, bool myTurn);
     // 상대방의 수를 받아 보드에 반영
-    void updateOpponentAction(const vector<int> &action, int time);
+    void updateOpponentAction(const Move & action, int time);
 
     // 주어진 수를 보드에 반영 (칸을 0으로 지움)
     void updateMove(int r1, int c1, int r2, int c2, bool isMyMove)

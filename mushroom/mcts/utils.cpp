@@ -160,7 +160,7 @@ list<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick
 // } 
 
 void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
-					  Move& move, list<Move>& validmoves,
+					  const Move& move, list<Move>& validmoves,
 					  unordered_set<Move, MoveHasher>& moveSet){
 	if( move.r1 == -1) return ;
 	// this->move가 발생한 후, validmoves를 재정의한다.

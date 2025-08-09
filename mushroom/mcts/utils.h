@@ -74,7 +74,7 @@ list<Move> getAllValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick
 //TODO : utils로 옮기기. (시뮬레이션시에 필요함)
 // 방법1 : incrementalUpdate
 void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick, 
-					  Move& move, list<Move>& validmoves,
+					  const Move& move, list<Move>& validmoves,
 					 unordered_set<Move, MoveHasher>& moveSet);
 
 bool isValid(const vector<vector<int>>& board, int r1, int c1, int r2, int c2);

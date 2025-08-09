@@ -50,15 +50,31 @@ bool MCTSNode::isFullyExpanded() const {
 // 	double exploration = EXPLORATION_CONSTANT * sqrt(log(parent->visits + 1) / visits);
 // 	return exploitation + exploration;
 // }
+
 double MCTSNode::uctValue() const {
 	if (visits == 0) return std::numeric_limits<double>::infinity();
 	double exploitation = wins / visits;
 
-	auto p = parent.lock();  // weak_ptr → shared_ptr
-	int parentVisits = p ? p->visits : 0;  // p가 nullptr일 수 있음 (루트 노드)
+	// max(parent visits)
+    int maxParentVisits = 0;
+    for (auto &wp : parents) {
+        if (auto p = wp.lock()) {
+            maxParentVisits = std::max(maxParentVisits, p->visits);
+        }
+    }
 
-	double exploration = EXPLORATION_CONSTANT * sqrt(log(parentVisits + 1) / visits);
-	return exploitation + exploration;
+    double exploration = EXPLORATION_CONSTANT * sqrt(log(maxParentVisits + 1) / visits);
+    return exploitation + exploration;
+	
+	
+	// sum(parent visits)
+	// int sumParentVisits = 0;
+	// for (auto &wp : parents) {
+	// 	if (auto p = wp.lock()) {
+	// 		sumParentVisits += p->visits;
+	// 	}
+	// }
+	// double exploration = EXPLORATION_CONSTANT * sqrt(log(sumParentVisits + 1) / visits);
 }
 
 void MCTSNode::expand() {
@@ -108,11 +124,14 @@ void MCTSNode::expand() {
 				auto it = transpositionTable.find(childHash);
 				if( it == transpositionTable.end()){
 					transpositionTable[childHash] = child;
+					child->parents.push_back(shared_from_this());
+					children.push_back(child);
 				} else {
 					auto existingNode = it->second;
+					existingNode->parents.push_back(shared_from_this());
+					children.push_back(existingNode);
 				}
-				children.push_back(child);
-				existingNode->parents.push_back(shared_from_this());
+				
 				added = true;
 				it++;
 				

@@ -56,11 +56,6 @@ int main()
 			
 			//조브리스트 해싱 준비
 			initZobrist();
-			
-			#ifdef DEBUG
-				cout<<" board initialization done"<<endl;
-			#endif
-            
 			continue;
         }
 
@@ -72,10 +67,6 @@ int main()
 
             vector<int> ret = game.calculateMove(myTime, oppTime);
             cout << ret[0] << " " << ret[1] << " " << ret[2] << " " << ret[3] << endl; // 내 행동 출력
-			
-			#ifdef DEBUG
-				break;
-			#endif
             continue;
         }
 
@@ -84,7 +75,7 @@ int main()
             // 상대 행동 반영
             int r1, c1, r2, c2, time;
             iss >> r1 >> c1 >> r2 >> c2 >> time;
-            game.updateOpponentAction({r1, c1, r2, c2}, time);
+            game.updateOpponentAction(Move(r1, c1, r2, c2), time);
             continue;
         }
 

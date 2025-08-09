@@ -20,7 +20,7 @@ Move runMCTS(NodePtr rootNode,
 	auto now = std::chrono::high_resolution_clock::now();
 	NodePtr node;
 	int i = 0;
-	while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 600 ){ // 600ms 동안 생각
+	while(std::chrono::duration_cast<std::chrono::milliseconds>(now-start).count() < 1200 ){ // 600ms 동안 생각
 		node = rootNode;
 		// Selection
 		while (node->isFullyExpanded() && !node->children.empty()) {
@@ -61,7 +61,7 @@ Move runMCTS(NodePtr rootNode,
 			else {
 				selected = make_shared<MCTSNode>(
 					node->board, node->fenwick, !myTurn, Move(-1,-1,-1,-1),
-					node->validmoves, node->moveSet, node, ms, os);
+					node->validmoves, node->moveSet, node, node->myScore, node->oppScore);
 				selected->hashKey = childHash;
 				transpositionTable[childHash] = selected;
 			}
