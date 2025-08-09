@@ -20,6 +20,13 @@ Game::Game(const Board &board, bool first)
 		rootNode = make_shared<MCTSNode>(board, fenwick, first, Move(-1,-1,-1,-1),
 										allValidMoves, moveSet, nullptr,0,0);
 		rootNode->validmovesupdated = true;
+
+		// 초기 zobrist 해시 계산
+    	uint64_t rootHash = computeZobristHash(board, myscore, oppscore, first);
+
+    	// 트랜스포지션 테이블에 등록
+    	transpositionTable[rootHash] = rootNode;
+		rootNode->hashKey = rootHash;
 		
 // auto end = std::chrono::high_resolution_clock::now();
 // auto duration = std::chrono::duration_cast<std::chrono::microseconds >(end-start);

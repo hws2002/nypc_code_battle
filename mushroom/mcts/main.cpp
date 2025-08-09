@@ -6,7 +6,7 @@
 #include <sstream>
 #include <algorithm>
 
-// #define DEBUG
+#define DEBUG
 
 using namespace std;
 
@@ -52,15 +52,13 @@ int main()
                 }
                 board.push_back(boardRow);
             }
-			
-			#ifdef DEBUG
-			cout<<"board size : "<<board.size()<<","<<board[0].size()<<endl;
-			#endif
-			
             game = Game(board, first);
 			
+			//조브리스트 해싱 준비
+			initZobrist();
+			
 			#ifdef DEBUG
-			cout<<" board initialization done"<<endl;
+				cout<<" board initialization done"<<endl;
 			#endif
             
 			continue;

@@ -44,6 +44,7 @@ Move runMCTS(NodePtr rootNode,
 		#ifdef DEBUG 
 			cout<<"expand"<<endl;
 		#endif
+		
 		// Expansion
 		// cout<<"start expansion"<<endl;
 		if (!node->isFullyExpanded()) node->expand();
@@ -51,29 +52,42 @@ Move runMCTS(NodePtr rootNode,
 		// cout<<"expansion done"<<endl;
 		
 		// Simulation
-		NodePtr selected = node->children.empty() ? 
-			make_shared<MCTSNode>(node->board, node->fenwick, !node->myTurn, Move{-1, -1, -1, -1}, 
-								node->validmoves, node->moveSet, node, node->myScore, node->oppScore) : 
-			node->children.back();
+		NodePtr selected;
+		if (node->children.empty()){
+			uint64_t childHash = computeZobristHash(node->board, node->myScore, node->oppScore, !node->myTurn);
+			auto it = transpositionTable.find(childHash);
+			if( it != transpositionTable.end())
+				selected = it->second;
+			else {
+				selected = make_shared<MCTSNode>(
+					node->board, node->fenwick, !myTurn, Move(-1,-1,-1,-1),
+					node->validmoves, node->moveSet, node, ms, os);
+				selected->hashKey = childHash;
+				transpositionTable[childHash] = selected;
+			}
+		} else 
+			selected = node->children.back();
 
 		#ifdef DEBUG 
 			cout<<"simulate with selected node "; selected->move.printMove(); cout<<endl;
 		#endif
 		bool result = simulate(selected, "random");
-		
 		#ifdef DEBUG 
 			cout<<"backprop"<<endl;
 		#endif
 
 		// Backpropagation
-		while (selected) {
-			selected->visits++;
-			if (selected->myTurn == myTurn && result)
-				selected->wins += 1.0;
-			else if (selected->myTurn != myTurn && !result)
-				selected->wins += 1.0;
-			selected = selected->parent.lock(); //weak_ptr -> shared_ptr
-		}
+		// while (selected) {
+		// 	selected->visits++;
+		// 	if (selected->myTurn == myTurn && result)
+		// 		selected->wins += 1.0;
+		// 	else if (selected->myTurn != myTurn && !result)
+		// 		selected->wins += 1.0;
+		// 	selected = selected->parent.lock(); //weak_ptr -> shared_ptr
+		// }		
+
+		backpropagate(selected, result, myTurn);
+		
 		now = std::chrono::high_resolution_clock::now();
 		i++;
 		#ifdef DEBUG
@@ -102,6 +116,8 @@ Move runMCTS(NodePtr rootNode,
 bool simulate(NodePtr selected, string method) {
 	// 시뮬레이션 전에, move에 기반하여(이 노드를 만들게 한 수) validmoves(부모의 validmoves와 동일)를 수정한다.
 	// 시뮬레이션에서는 따로 moveSet을 수정하지 않는다.
+	// transposition table에도 따로 추가하지 않는다.
+	
 	if( !selected->validmovesupdated ) {
 		// 이때는 "추가"만 된다. 
 		updateValidMoves(selected->board, selected->fenwick,
@@ -192,4 +208,34 @@ bool simulate(NodePtr selected, string method) {
 	} else { //TODO
 		return false;
 	}
+}
+
+void backpropagate(NodePtr node, bool result, bool myTurn) {
+    std::queue<NodePtr> queue;
+    std::unordered_set<NodePtr> visited; // 방문 체크를 위해, 필요하다면 비교 연산자 재정의
+
+    queue.push(node);
+    visited.insert(node);
+
+    while (!queue.empty()) {
+        auto current = queue.front();
+        queue.pop();
+
+        current->visits++;
+
+        // 현재 노드가 내 턴일 때 결과가 승리면 wins 증가, 아니면 내 턴이 아니고 결과가 패배면 wins 증가
+        if ((current->myTurn == myTurn && result) || (current->myTurn != myTurn && !result)) {
+            current->wins += 1.0;
+        }
+
+        for (auto &weakParent : current->parents) {
+            if (auto parent = weakParent.lock()) {
+                // 중복 방문 방지
+                if (visited.find(parent) == visited.end()) {
+                    queue.push(parent);
+                    visited.insert(parent);
+                }
+            }
+        }
+    }
 }

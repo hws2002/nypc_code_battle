@@ -183,7 +183,7 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
 	// Fenwick Tree 업데이트
 	for(int r = move.r1; r <= move.r2; r++){
 		for(int c = move.c1; c <= move.c2; c++){
-			if( board[r][c] )
+			if( board[r][c] > 0) // -1은 상대방이 이미 차지한 땅을 의미한다.
 				fenwick.update(r,c, -board[r][c]);
 		}
 	}
@@ -209,9 +209,11 @@ void updateValidMoves(const vector<vector<int>>& board, Fenwick2D& fenwick,
             }
 		}
 	}
+	
 	validmoves.sort([](const Move& a, const Move& b){
 		return a.size < b.size;
 	});
+	
 	#ifdef DEBUG
 		cout<<"end updatevalidmoves"<<endl;
 	#endif

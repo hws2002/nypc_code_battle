@@ -2,6 +2,7 @@
 #include "mcts.h"
 #include "mctsnode.h"
 
+
 // #define DEBUG
 
 using namespace std;
@@ -11,7 +12,8 @@ MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool my
 				   Move move, const list<Move> validMoves, unordered_set<Move, MoveHasher>& moveSet,
 				  NodePtr parent, int myScore, int oppScore)
 	: board(board), fenwick(fenwick), myTurn(myTurn), move(move), 
-	validmoves(validMoves),moveSet(moveSet), parent(parent), myScore(myScore), oppScore(oppScore) {
+	validmoves(validMoves),moveSet(moveSet), myScore(myScore), oppScore(oppScore) {
+		parents.push_back(parent);
 		if(move == Move(-1, -1, -1, -1)) {
 			validmovesupdated = true;
 		} else {
@@ -23,10 +25,15 @@ MCTSNode::MCTSNode(const vector<vector<int>>& board, Fenwick2D& fenwick, bool my
 					}
 				}
 			}
-			// set board to 0
+			
+			// set board to 0 or -1
 			for(int r = move.r1; r <= move.r2; ++r)
-				for (int c = move.c1; c <= move.c2; ++c)
-					this->board[r][c] = 0;
+				for (int c = move.c1; c <= move.c2; ++c){
+					if( myTurn) // move는 나의 턴일때의 action
+						this->board[r][c] = 0;
+					else
+						this->board[r][c] = -1;
+				}
 		}
 		it = validmoves.begin();
 	}
@@ -64,18 +71,54 @@ void MCTSNode::expand() {
 
 				// child의 validmoves는 생성될때 바로 수정되지 않고, selected 됐을때 수정한다.
 				int ms = myScore; int os = oppScore;
-				if(myTurn) ms+= m.size;
-				else os += m.size;
+				for(int r = m.r1; r <= m.r2; r++){
+					for(int c = m.c1; c <= m.c2; c++){
+						if(myTurn){ // 내턴
+							if( board[r][c] == -1){ //상대땅
+								os--;
+								ms++;
+							} else if (board[r][c] == 0){ //내땅
+								//아무것도 안함
+							} else {
+								ms++;
+							}
+						} else { //상대턴
+							if( board[r][c] == -1) { // 상대땅
+								// 아무것도 안함
+							} else if (board[r][c] == 0){ //내땅
+								ms--;
+								os++;
+							} else {// 소유권없는 땅
+								os++;
+							}
+						}
+					}
+				}
 				auto self = shared_from_this();
-
-				//children 노드 생성시에, board와 fenwick를 수정생성한다.
-				children.push_back(make_shared<MCTSNode>(board, fenwick, !myTurn, m, 
-														validmoves, moveSet, self, ms, os));
+				
+				//child 노드 생성시에, board와 fenwick를 수정생성한다.
+				auto child = make_shared<MCTSNode>(
+					board, fenwick, !myTurn, m,
+					validmoves, moveSet, self, ms, os
+				);
+				
+				uint64_t childHash = computeZobristHash(child->board, ms, os, !myTurn);
+				child->hashKey = childHash;
+				
+				auto it = transpositionTable.find(childHash);
+				if( it == transpositionTable.end()){
+					transpositionTable[childHash] = child;
+				} else {
+					auto existingNode = it->second;
+				}
+				children.push_back(child);
+				existingNode->parents.push_back(shared_from_this());
+				added = true;
+				it++;
+				
 				#ifdef DEBUG
 					// cout<<"created child with "; m.printMove(); cout<<endl;
 				#endif
-				added = true;
-				it++;
 			} else { //not valid anymore
 				auto it_copy = it;
 				moveSet.erase(m);

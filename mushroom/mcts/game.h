@@ -21,7 +21,6 @@ public:
 	int oppscore;
 	list<Move> allValidMoves;
 	shared_ptr<class MCTSNode> rootNode;
-	unordered_map<uint64_t, shared_ptr<MCTSNode>> transpositionTable;
 
     Game() {};
 

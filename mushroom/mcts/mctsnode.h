@@ -1,6 +1,7 @@
 // mctsnode.h
 #pragma once
 
+#include "globals.h"
 #include "utils.h"
 #include <cmath>
 #include <cstdlib>
@@ -10,6 +11,7 @@
 #include <vector>
 #include <unordered_set>
 #include <list>
+
 
 using namespace std;
 const double EXPLORATION_CONSTANT = sqrt(2.0);
@@ -31,10 +33,11 @@ public:
     vector<NodePtr> children;
 	// vector<Move> validmoves;
 	list<Move> validmoves;
-    weak_ptr<MCTSNode> parent;
+    vector<weak_ptr<MCTSNode>> parents;
 	Fenwick2D fenwick;
 	unordered_set<Move, MoveHasher> moveSet;
     list<Move>::iterator it;
+	uint64_t hashKey;
 	
 	MCTSNode(){}; // default generator
     MCTSNode(const vector<vector<int>>& board, Fenwick2D & fenwick, bool myTurn,
